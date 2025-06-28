@@ -574,10 +574,28 @@ h1 {
   .cards-grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    max-width: 400px;
+    max-width: 100%;
+    gap: 1rem;
   }
   
   .card {
-    aspect-ratio: 1.2;
+    aspect-ratio: auto;
+    min-height: auto;
+    padding: 1.25rem;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
   }
 }
