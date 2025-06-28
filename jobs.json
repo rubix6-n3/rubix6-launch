@@ -1,0 +1,102 @@
+{
+  "jobs": [
+    {
+      "title": "Founding UX Designer",
+      "location": "Rubixvi • Singapore | Remote",
+      "summary": "We are looking for a UX Designer to join the founding product team at Rubixvi to help build a new digital health platform.",
+      "description": [
+        "This is a chance to shape the product from the inside out, not just how it looks but how it works. You will be the first internal designer on the team, with the opportunity to define flows, create systems, and help build something that truly matters.",
+        "We care about design that is practical, clean, and centered around real users. You will work closely with engineers, product leads, and stakeholders to make sure what we build is thoughtful, usable, and scalable.",
+        "You will work directly with experts who bring decades of experience in product delivery and deep expertise in the medical field. This is a chance to learn, grow, and contribute to a transformative product that aims to make a real impact."
+      ],
+      "requirements": [
+        "4 or more years of experience in UX or UI design",
+        "Strong portfolio showing mobile first design work for iOS and Android",
+        "Proficiency in Figma for interface design, prototyping, and design systems",
+        "Solid grasp of interaction patterns, accessibility, and responsive design",
+        "Able to produce and maintain developer ready design documentation",
+        "Familiar with working closely with developers and product leads",
+        "Excellent written and verbal communication in English"
+      ],
+      "whoYouAre": [
+        "You are driven by problems, not just pixels",
+        "You collaborate well across disciplines",
+        "You enjoy working within constraints and iterating with feedback",
+        "You value clarity in your designs, documentation, and communication",
+        "You take ownership but are not precious about your work",
+        "You want to build something that helps people in real life"
+      ],
+      "whatYouWillDo": [
+        "Design and evolve the core experience across mobile and web",
+        "Build and maintain a modular design system in Figma",
+        "Define user flows, structure information, and shape interactions",
+        "Work closely with engineers and product leads to ship features",
+        "Produce high quality documentation and design specifications",
+        "Join product discussions and help shape priorities and decisions"
+      ],
+      "contractSetup": [
+        "Full-time remote position",
+        "Reporting to product leadership, working directly with frontend and backend engineers"
+      ]
+    },
+    {
+      "title": "Operations Manager",
+      "location": "Rubixvi • Singapore | Remote",
+      "summary": "As Operations Manager at Rubixvi, you'll become the operational backbone of our fast-developing healthcare company.",
+      "description": [
+        "Lead operational excellence across all departments while scaling our healthcare innovation platform. You'll streamline processes, manage cross-functional initiatives, and ensure our team operates at peak efficiency as we revolutionize global healthcare delivery."
+      ],
+      "requirements": [
+        "4+ years of operations experience in fast-growing startups",
+        "Experience scaling teams and processes in healthcare or similar regulated industries",
+        "Strong analytical skills and data-driven decision making",
+        "Excellent project management and cross-functional collaboration skills"
+      ],
+      "whoYouAre": [
+        "You thrive in ambiguous, fast-paced environments",
+        "You're passionate about building systems that scale",
+        "You believe in the transformative power of healthcare technology",
+        "You're detail-oriented but never lose sight of the big picture"
+      ],
+      "whatYouWillDo": [
+        "Design and implement operational frameworks across all departments",
+        "Lead cross-functional initiatives to drive company-wide efficiency",
+        "Build partnerships and vendor relationships critical to our mission",
+        "Establish metrics and KPIs to measure operational success"
+      ],
+      "contractSetup": [
+        "Full-time position with equity participation",
+        "Hybrid work arrangements available"
+      ]
+    }, 
+    {
+      "title": "Full-Stack Engineer",
+      "location": "Rubixvi • Singapore | Remote",
+      "summary": "As a Founding Full-Stack Engineer at Rubixvi, you'll be building the core healthcare platform that powers our products.",
+      "description": [
+        "Architect and build our entire technology stack from the ground up. You'll work on everything from database design to user interfaces, creating scalable solutions that can handle the demands of global healthcare delivery."
+      ],
+      "requirements": [
+        "4+ years of full-stack development experience",
+        "Expertise in modern web technologies (React, Go, TypeScript)",
+        "Experience with database design and cloud architecture",
+        "Knowledge of healthcare data standards and security requirements"
+      ],
+      "whoYouAre": [
+        "You're passionate about building scalable, reliable systems",
+        "You understand the full software development lifecycle",
+        "You thrive in a fast-paced startup environment",
+        "You're committed to writing clean, maintainable code"
+      ],
+      "whatYouWillDo": [
+        "Design and implement core platform architecture",
+        "Build both frontend and backend components",
+        "Ensure security and compliance with healthcare regulations",
+        "Lead technical decisions and mentor other engineers"
+      ],
+      "contractSetup": [
+        "Full-time position with leadership growth path"
+      ]
+    }
+  ]
+}
