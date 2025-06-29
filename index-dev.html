@@ -17,21 +17,23 @@
 </head>
 <body>
   <div class="hero-section">
-    <img src="rubixvi_logo.png" alt="Rubixvi logo" />
-    
-    <h1>Rubixvi</h1>
+    <div class="hero-container">
+      <img src="rubixvi_logo.png" alt="Rubixvi logo" />
+      
+      <h1>Rubixvi</h1>
 
-    <div class="main-slogan">
-      Re‑imagining global healthcare
+      <div class="main-slogan">
+        Re‑imagining global healthcare
+      </div>
+
+      <div class="slogan">
+        We're building something new.
+      </div>
+
+      <button class="get-started-btn" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+        Get started
+      </button>
     </div>
-
-    <div class="slogan">
-      We're building something new.
-    </div>
-
-    <button class="get-started-btn" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
-      Get started
-    </button>
   </div>
 
   <section id="about" class="cards-section">
@@ -39,12 +41,12 @@
       <div class="cards-grid">
       <div class="card">
         <h3>About</h3>
-        <p>Rubixvi is a healthcare innovation company based in Singapore, building a transformative medtech platform designed to change how care is experienced — starting from Asia, built for the world. Our founders bring deep expertise across healthcare and technology, combining real-world insight with a bold vision for what connected care can look like. We're focused on creating systems that work with clarity and purpose at their core.</p>
+        <p>Rubixvi is a healthcare innovation company based in Singapore, building a transformative medtech platform designed to change how care is experienced — starting from Asia, <strong>built for the world</strong>. Our founders bring deep expertise across healthcare and technology, combining real-world insight with a bold vision for what <strong>connected care</strong> can look like. We're focused on creating systems that work with <strong>clarity and purpose</strong> at their core.</p>
       </div>
 
       <div class="card">
         <h3>Vision</h3>
-        <p>We envision a world where healthcare evolves with us — designed to support every step of life's journey. Through thoughtful design and purposeful technology, we're building systems that simplify care, connect experiences, and honor the people behind every interaction. We believe better care enables people to live with dignity, confidence, and the freedom to reach their full potential.</p>
+        <p>We envision a world where healthcare evolves with us — designed to support every step of life's journey. Through thoughtful design and purposeful technology, we're building systems that simplify care, connect experiences, and honor the people behind every interaction. We believe better care enables people to live with <strong>dignity</strong>, <strong>confidence</strong>, and the <strong>freedom to reach their full potential</strong>.</p>
       </div>
 
       <div class="card">
@@ -82,8 +84,8 @@
     </div>
   </section>
 
-  <button class="back-to-top" onclick="scrollToPreviousSection()">
-    ↑
+  <button class="back-to-top" onclick="handleNavigation()">
+    <span class="nav-arrow">↑</span>
   </button>
 
   <footer class="footer">
@@ -128,13 +130,15 @@
       }
     }
 
-    // Footer and back-to-top scroll animation
+    // Footer and navigation button scroll animation
     function handleScrollAnimations() {
       const footer = document.querySelector('.footer');
       const backToTop = document.querySelector('.back-to-top');
+      const navArrow = document.querySelector('.nav-arrow');
       const careersSection = document.getElementById('careers');
       const careersRect = careersSection.getBoundingClientRect();
       const windowHeight = window.innerHeight;
+      const scrollY = window.scrollY;
       
       // Show footer when careers section is 70% visible
       if (careersRect.top <= windowHeight * 0.3) {
@@ -143,9 +147,19 @@
         footer.classList.remove('visible');
       }
 
-      // Show back-to-top button when scrolled past hero section
-      if (window.scrollY > windowHeight * 0.5) {
+      // Show navigation button when scrolled past hero section
+      if (scrollY > windowHeight * 0.5) {
         backToTop.classList.add('visible');
+        
+        // Change arrow direction based on current section
+        // If in cards section, show down arrow; if in careers section, show up arrow
+        if (careersRect.top > windowHeight * 0.8) {
+          // User is in cards section
+          navArrow.textContent = '↓';
+        } else {
+          // User is in careers section or beyond
+          navArrow.textContent = '↑';
+        }
       } else {
         backToTop.classList.remove('visible');
       }
@@ -300,28 +314,35 @@
     }
 
     // Section navigation functionality
-    function scrollToPreviousSection() {
+    function handleNavigation() {
       const sections = [
         document.querySelector('.hero-section'),
         document.getElementById('about'),
         document.getElementById('careers')
       ];
       
-      const currentScrollY = window.scrollY;
+      const careersSection = document.getElementById('careers');
+      const careersRect = careersSection.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      // Find current section based on scroll position
-      let targetSection = sections[0]; // Default to hero
-      
-      if (currentScrollY >= sections[2].offsetTop - windowHeight * 0.3) {
-        // In careers section, go to cards section
-        targetSection = sections[1];
-      } else if (currentScrollY >= sections[1].offsetTop - windowHeight * 0.3) {
-        // In cards section, go to hero section
-        targetSection = sections[0];
+      // If in cards section (down arrow showing), go to careers
+      if (careersRect.top > windowHeight * 0.8) {
+        careersSection.scrollIntoView({behavior: 'smooth'});
+      } else {
+        // If in careers section (up arrow showing), go back up
+        const currentScrollY = window.scrollY;
+        let targetSection = sections[0]; // Default to hero
+        
+        if (currentScrollY >= sections[2].offsetTop - windowHeight * 0.3) {
+          // In careers section, go to cards section
+          targetSection = sections[1];
+        } else if (currentScrollY >= sections[1].offsetTop - windowHeight * 0.3) {
+          // In cards section, go to hero section
+          targetSection = sections[0];
+        }
+        
+        targetSection.scrollIntoView({behavior: 'smooth'});
       }
-      
-      targetSection.scrollIntoView({behavior: 'smooth'});
     }
 
     // Anime.js animations
