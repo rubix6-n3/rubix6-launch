@@ -13,11 +13,11 @@ rubix6-launch/
 ├── index.html          # Production landing page (GitHub Pages)
 ├── index-dev.html      # Development version with enhanced features
 ├── styles.css          # Shared CSS styles
-├── jobs.json          # Job listings data (for dev version)
-├── rubixvi_logo.png   # Company logo
-├── favicon.ico        # Website favicon
-├── CNAME              # GitHub Pages custom domain
-└── CLAUDE.md          # Development documentation
+├── jobs.json           # Job listings data
+├── rubixvi_logo.png    # Company logo
+├── favicon.ico         # Website favicon
+├── CNAME               # GitHub Pages custom domain
+└── .gitignore          # Git ignore file
 ```
 
 ## 🚀 Features
@@ -95,11 +95,11 @@ When opening HTML files directly in a browser (`file://` protocol), modern brows
 
 ## 📊 Job Listings Management
 
-The development version loads job listings from `jobs.json`. This allows for easy content management without code changes.
+Job listings are managed through `jobs.json` for easy content updates without modifying HTML.
 
-### Adding/Editing Jobs
+### Editing Job Listings
 
-1. **Edit `jobs.json`**
+1. **Edit `jobs.json`** directly in your code editor or through GitHub web interface:
    ```json
    {
      "jobs": [
@@ -117,11 +117,59 @@ The development version loads job listings from `jobs.json`. This allows for eas
    }
    ```
 
-2. **Refresh the page** - Changes appear automatically
+2. **Test locally** using the development server
+3. **Commit changes** to update the live site
 
-### Error Handling
+### Quick Edit via GitHub
 
-If `jobs.json` fails to load (e.g., CORS issues), the page shows a user-friendly error message instead of breaking.
+1. Navigate to `github.com/rubix6-n3/rubix6-launch`
+2. Click on `jobs.json`
+3. Click the pencil icon to edit
+4. Make your changes
+5. Commit with a descriptive message
+6. Changes go live automatically in ~2 minutes
+
+## 🚀 Moving to Production
+
+When ready to deploy the development version to production:
+
+1. **Backup current production file**
+   ```bash
+   cp index.html index-backup.html
+   ```
+
+2. **Copy development to production**
+   ```bash
+   cp index-dev.html index.html
+   ```
+
+3. **Test locally**
+   ```bash
+   python3 -m http.server 8000
+   # Visit http://localhost:8000/index.html
+   ```
+
+4. **Commit and push**
+   ```bash
+   git add index.html
+   git commit -m "Deploy new version to production"
+   git push
+   ```
+
+5. **Verify deployment**
+   - Visit www.rubixvi.com
+   - Check all features work correctly
+   - Verify job listings load properly
+
+### Rollback if Needed
+
+If issues arise after deployment:
+```bash
+cp index-backup.html index.html
+git add index.html
+git commit -m "Rollback to previous version"
+git push
+```
 
 ## 🎨 Styling
 
@@ -131,7 +179,9 @@ If `jobs.json` fails to load (e.g., CORS issues), the page shows a user-friendly
 - **Color Scheme**: Light backgrounds with brand gradient accents
 - **Typography**: Poppins font family
 
-## 🚀 Deployment
+## 🔄 Deployment Workflow
+
+### Automatic Deployment
 
 The site is automatically deployed via GitHub Pages:
 
@@ -139,6 +189,13 @@ The site is automatically deployed via GitHub Pages:
 - **Custom Domain**: www.rubixvi.com (configured via `CNAME`)
 - **HTTPS**: Enforced for security
 - **Auto-deployment**: Push to main branch triggers deployment
+
+### Development to Production Workflow
+
+1. **Develop and test** using `index-dev.html`
+2. **Update job listings** in `jobs.json` as needed
+3. **Deploy to production** by copying `index-dev.html` to `index.html`
+4. **Push changes** - GitHub Pages deploys automatically
 
 ## 🛠️ Technologies Used
 
