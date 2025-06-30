@@ -80,10 +80,91 @@
     "Full-time position, fully remote",
     "Report to product leadership and work alongside engineers, QA, and designers"
   ]
-}
+},
 
-
-
+{
+  "title": "Mid-Level Frontend Developer",
+  "location": "Rubixvi • Singapore | Remote",
+  "summary": "As a Mid-Level Frontend Developer at Rubixvi, you’ll help build user-facing features for of our new digital health platform.",
+  "description": [
+    "Work with a small, talented team to build and evolve our mobile and web apps. You'll collaborate closely with product, design, and backend teammates, owning features from idea to launch. This is a hands-on role focused on delivering clean code, intuitive UI, and reliable experiences for people who need them."
+  ],
+  "requirements": [
+    "3+ years of experience in modern frontend development",
+    "Solid experience with React and TypeScript",
+    "Experience with React Native or strong willingness to learn",
+    "Ability to build responsive layouts and smooth mobile interactions",
+    "Familiar with git, PRs, CI, and code review workflows",
+    "Comfortable working with design and backend teams",
+    "Attention to code quality, performance, and maintainability",
+    "Good written and spoken English",
+    "Experience with mobile-first products"
+  ],
+  "whoYouAre": [
+    "You care about user experience as much as code",
+    "You like working with designers and getting details right",
+    "You enjoy building UI that feels smooth and well-integrated",
+    "You take ownership and are reliable with delivery",
+    "You work well in teams — you listen, speak up, and collaborate",
+    "You like startups and are comfortable with pace and variety"
+  ],
+  "whatYouWillDo": [
+    "Build and maintain user-facing features for mobile and web",
+    "Translate designs and ideas into working interfaces",
+    "Integrate APIs and collaborate with backend engineers",
+    "Write clean, maintainable, reusable code using React and React Native",
+    "Participate in reviews, planning, and delivery discussions",
+    "Help improve our frontend tooling and performance"
+  ],
+  "contractSetup": [
+    "Full-time remote position",
+    "Work with product leadership, senior engineers, and design team",
+ 
+  ]
+},
+{
+  "title": "Project Manager – Core Product Team",
+  "location": "Rubixvi • Singapore | Remote",
+  "summary": "As Project Manager at Rubixvi, you’ll help keep our core product team focused, organized, and delivering—without adding unnecessary process.",
+  "description": [
+    "Work side-by-side with product, design, and engineering to track delivery, unblock issues, and make sure everyone has what they need to do their best work. You’re there to reduce noise, keep the team aligned, and help things move smoothly as we build out Rubixvi’s digital health platform."
+  ],
+  "requirements": [
+    "4+ years of experience as a project or delivery manager",
+    "Experience working with product, design, and engineering teams",
+    "Comfortable managing sprints, delivery tracking, and prioritization",
+    "Familiar with Jira, Linear, or other task management tools",
+    "Able to lead stand-ups, retros, and planning sessions without overcomplicating them",
+    "Strong communicator—clear in Slack, Notion, docs, and meetings",
+    "Familiar with agile and lean delivery models",
+    "Strong written and spoken English",
+    "Bonus: Experience in healthtech, SaaS, or service platforms",
+    "Bonus: Worked in remote-first or async-first teams",
+    "Bonus: Experience supporting or defining product roadmaps"
+  ],
+  "whoYouAre": [
+    "You help teams deliver—not just track work",
+    "You’re organized but flexible, adapting to how the team works best",
+    "You bring clarity and reduce ambiguity",
+    "Devs trust you and stakeholders respect your updates",
+    "You keep things moving but don’t need to be the center of attention",
+    "You stay calm under pressure and are helpful when things go wrong"
+  ],
+  "whatYouWillDo": [
+    "Structure and maintain the team’s delivery schedule",
+    "Track feature progress, highlight risks, and follow up on blockers",
+    "Facilitate sprint planning, retrospectives, and alignment meetings",
+    "Coordinate across product, design, and engineering",
+    "Own delivery tracking in Jira, Linear, or similar tools",
+    "Keep documentation of what’s being built, shipped, or delayed up to date",
+    "Help onboard new team members and organize resources"
+  ],
+  "contractSetup": [
+    "Full-time remote position ",
+    "Work closely with product leadership, engineering, and design",
+    "Focused on product delivery and team efficiency"
+  ]
+},
 
     
     {
@@ -97,6 +178,7 @@
         "4+ years of operations experience in fast-growing startups",
         "Experience scaling teams and processes in healthcare or similar regulated industries",
         "Strong analytical skills and data-driven decision making",
+        "Good at finding new talent and guiding",
         "Excellent project management and cross-functional collaboration skills"
       ],
       "whoYouAre": [
@@ -116,34 +198,6 @@
         "Hybrid work arrangements available"
       ]
     }, 
-    {
-      "title": "Full-Stack Engineer",
-      "location": "Rubixvi • Singapore | Remote",
-      "summary": "As a Founding Full-Stack Engineer at Rubixvi, you'll be building the core healthcare platform that powers our products.",
-      "description": [
-        "Architect and build our entire technology stack from the ground up. You'll work on everything from database design to user interfaces, creating scalable solutions that can handle the demands of global healthcare delivery."
-      ],
-      "requirements": [
-        "4+ years of full-stack development experience",
-        "Expertise in modern web technologies (React, Go, TypeScript)",
-        "Experience with database design and cloud architecture",
-        "Knowledge of healthcare data standards and security requirements"
-      ],
-      "whoYouAre": [
-        "You're passionate about building scalable, reliable systems",
-        "You understand the full software development lifecycle",
-        "You thrive in a fast-paced startup environment",
-        "You're committed to writing clean, maintainable code"
-      ],
-      "whatYouWillDo": [
-        "Design and implement core platform architecture",
-        "Build both frontend and backend components",
-        "Ensure security and compliance with healthcare regulations",
-        "Lead technical decisions and mentor other engineers"
-      ],
-      "contractSetup": [
-        "Full-time position with leadership growth path"
-      ]
-    }
+   
   ]
 }
