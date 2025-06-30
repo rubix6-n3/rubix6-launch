@@ -39,6 +39,53 @@
         "Reporting to product leadership, working directly with frontend and backend engineers"
       ]
     },
+{
+  "title": "Lead App Developer",
+  "location": "Rubixvi • Singapore | Remote",
+  "summary": "As Lead App Developer at Rubixvi, you'll drive the technical vision and hands-on development of our new digital health platform.",
+  "description": [
+    "Lead the development of our mobile and web applications, working closely with product, design, and fellow developers to bring Rubixvi’s digital health platform to life. You'll help shape the architecture, set technical direction, and guide a small engineering team in shipping features that make a real difference."
+  ],
+  "requirements": [
+    "6+ years of experience in software development",
+    "Strong knowledge of React and React Native",
+    "Experience with at least one backend language (Node.js or Python preferred)",
+    "Proficiency with TypeScript and API integration",
+    "Track record of building and maintaining production web or mobile apps",
+    "Familiarity with git workflows, CI/CD pipelines, and deployments",
+    "Experience mentoring or leading engineering teammates",
+    "Comfortable collaborating with product and design from concept to delivery",
+    "Strong communication skills in English",
+    "Exposure to startup environments and zero-to-one product launches",
+    "Familiarity with authentication, analytics, and mobile deployments (App Store, Play Store)"
+  ],
+  "whoYouAre": [
+    "You lead by doing and enjoy building things that help people",
+    "You thrive in ambiguous, early-stage environments",
+    "You work well with designers and product leads to create great user experiences",
+    "You communicate clearly and enjoy talking through tradeoffs",
+    "You take ownership of delivery, not just code",
+    "You enjoy working in small, high-trust teams"
+  ],
+  "whatYouWillDo": [
+    "Lead the development of Rubixvi’s mobile and web applications",
+    "Define architecture, tooling, and engineering best practices",
+    "Collaborate with product and design on features, flows, and priorities",
+    "Write, review, and ship clean, scalable code",
+    "Mentor mid-level engineers and build strong team culture",
+    "Set up deployment pipelines for speed and reliability",
+    "Support QA, testing, and technical documentation"
+  ],
+  "contractSetup": [
+    "Full-time position, fully remote",
+    "Report to product leadership and work alongside engineers, QA, and designers"
+  ]
+}
+
+
+
+
+    
     {
       "title": "Operations Manager",
       "location": "Rubixvi • Singapore | Remote",
