@@ -9,34 +9,41 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="hero-section">
+    <div class="hero-container">
+      <img src="rubixvi_logo.png" alt="Rubixvi logo" />
+      <h1>Rubixvi</h1>
+      <div class="main-slogan">Re‑imagining global healthcare</div>
+      <div class="slogan">We're building something new.</div>
+      <button class="get-started-btn" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+        Get started
+      </button>
+    </div>
+  </div>
 
   <!-- CARDS SECTION -->
-  <section id="cards" class="cards-section">
+  <section id="about" class="cards-section">
     <div class="cards-container">
       <div class="cards-grid">
-        <!-- About Card -->
         <div class="card about-card">
           <h3>About</h3>
           <p>
             Rubixvi is a healthcare innovation company based in Singapore, building a transformative medtech platform designed to change how care is experienced — starting from Asia, <b>built for the world</b>. Our founders bring deep expertise across healthcare and technology, combining real-world insight with a bold vision for what <b>connected care</b> can look like. We’re focused on creating systems that work with <b>clarity and purpose</b> at their core.
           </p>
         </div>
-        <!-- Vision Card -->
         <div class="card vision-card">
           <h3>Vision</h3>
           <p>
             We envision a world where healthcare evolves with us — designed to support every step of life’s journey. Through thoughtful design and purposeful technology, we're building systems that simplify care, connect experiences, and honor the people behind every interaction. We believe better care enables people to live with <b>dignity, confidence</b>, and the <b>freedom to reach their full potential</b>.
           </p>
         </div>
-        <!-- Join Us Card -->
         <div class="card join-card">
           <h3>Join Us</h3>
           <p>
             We're looking for rockstars to join the team. If you think you've got what it takes to revolutionize healthcare, reach out to chat about a seat on the rocketship!
           </p>
-          <a href="#careers" class="card-link">Find out more →</a>
+          <a href="#careers" onclick="document.getElementById('careers').scrollIntoView({behavior: 'smooth'})" class="card-link">Find out more →</a>
         </div>
-        <!-- Contact Card -->
         <div class="card contact-card">
           <h3>Contact</h3>
           <p>
@@ -50,7 +57,7 @@
     </div>
   </section>
 
-  <!-- CAREERS / JOIN OUR TEAM SECTION -->
+  <!-- CAREERS SECTION -->
   <section id="careers" class="careers-section">
     <div class="careers-container">
       <div class="careers-header">
@@ -59,9 +66,7 @@
           We’re a <strong>stealth–mode healthcare innovation company</strong> building the next generation of healthcare applications. In our team, you'll enjoy the <strong>energy of a startup</strong> with <strong>people–centric impact</strong>, tremendous opportunities to work with an <strong>extraordinary team</strong> of smart, creative, fun, and <strong>highly motivated</strong> people, and flexible hours including remote work.
         </p>
       </div>
-      <div id="jobs-container">
-        <!-- Jobs will be injected here by JS -->
-      </div>
+      <div id="jobs-container"></div>
     </div>
   </section>
 
@@ -87,38 +92,79 @@
       window.scrollTo({top:0, behavior:'smooth'});
     });
 
-    // JOBS LOADING LOGIC
+    // -------- JOBS LOADING --------
+    // Renders jobs using the old (detailed) structure!
+    async function loadJobs() {
+      try {
+        const response = await fetch('jobs.json');
+        if (!response.ok) throw new Error('Fetch error');
+        const data = await response.json();
+        if (!data.jobs || !Array.isArray(data.jobs) || data.jobs.length === 0) {
+          showJobsFallback();
+          return;
+        }
+        renderJobs(data.jobs);
+      } catch (err) {
+        showJobsFallback();
+      }
+    }
+
     function renderJobs(jobs) {
-      if (!jobs.length) return false;
-      let html = `<div class="jobs-list">`;
-      for (const job of jobs) {
-        html += `
-          <div class="job-card">
-            <div class="job-header">
-              <div class="job-info">
-                <div class="job-title">${job.title || 'Untitled Role'}</div>
-                ${job.location ? `<div class="job-location">${job.location}</div>` : ''}
-                ${job.summary ? `<div class="job-summary">${job.summary}</div>` : ''}
-              </div>
-              <span class="job-arrow">▶</span>
+      const container = document.getElementById('jobs-container');
+      container.innerHTML = "";
+      jobs.forEach((job, idx) => {
+        // handle missing arrays gracefully
+        const requirements = job.requirements || [];
+        const whoYouAre = job.whoYouAre || [];
+        const whatYouWillDo = job.whatYouWillDo || [];
+        const contractSetup = job.contractSetup || [];
+        const description = job.description || [];
+
+        const jobCard = document.createElement('div');
+        jobCard.className = 'job-card';
+        jobCard.innerHTML = `
+          <div class="job-header" onclick="toggleJobDetails(this)">
+            <div class="job-info">
+              <div class="job-title">${job.title || "Untitled role"}</div>
+              <div class="job-location">${job.location || ""}</div>
+              <div class="job-summary">${job.summary || ""}</div>
             </div>
-            <div class="job-details">
-              <div class="job-description">
-                ${job.description ? job.description : ''}
-                ${job.requirements ? `<h4>Requirements</h4><ul>${job.requirements.map(r=>`<li>${r}</li>`).join('')}</ul>` : ''}
-                ${job.responsibilities ? `<h4>Responsibilities</h4><ul>${job.responsibilities.map(r=>`<li>${r}</li>`).join('')}</ul>` : ''}
-                ${job.apply ? `<div class="job-cta"><a class="cta-button" href="mailto:${job.apply}?subject=Application for ${job.title}">Apply Now</a></div>` : ''}
+            <div class="job-arrow">→</div>
+          </div>
+          <div class="job-details">
+            <div class="job-description">
+              ${description.map(p => `<p>${p}</p>`).join("")}
+              ${requirements.length ? `<h4>Requirements</h4><ul>${requirements.map(r => `<li>${r}</li>`).join("")}</ul>` : ""}
+              ${whoYouAre.length ? `<h4>Who You Are</h4><ul>${whoYouAre.map(r => `<li>${r}</li>`).join("")}</ul>` : ""}
+              ${whatYouWillDo.length ? `<h4>What You Will Do</h4><ul>${whatYouWillDo.map(r => `<li>${r}</li>`).join("")}</ul>` : ""}
+              ${contractSetup.length ? `<h4>Contract & Setup</h4><ul>${contractSetup.map(r => `<li>${r}</li>`).join("")}</ul>` : ""}
+              <div class="job-cta">
+                <div class="job-separator"></div>
+                <p class="cta-text">Interested in this role? We'd love to hear from you!</p>
+                <a class="cta-button" href="mailto:hello@rubixvi.com?subject=Application for ${encodeURIComponent(job.title || "a role at Rubixvi")}" target="_blank" onclick="event.stopPropagation()">Apply for this position →</a>
               </div>
             </div>
           </div>
         `;
-      }
-      html += `</div>`;
-      return html;
+        container.appendChild(jobCard);
+      });
+
+      // Expand/collapse jobs logic
+      document.querySelectorAll('.job-card .job-header').forEach(header => {
+        header.addEventListener('click', function(e) {
+          const card = this.parentElement;
+          card.classList.toggle('expanded');
+          // Collapse others
+          document.querySelectorAll('.job-card').forEach(other => {
+            if (other !== card) other.classList.remove('expanded');
+          });
+        });
+      });
     }
 
-    function jobsFallback() {
-      return `
+    function showJobsFallback() {
+      const container = document.getElementById('jobs-container');
+      container.innerHTML = `
         <div class="careers-card">
           <span class="careers-emoji">🚀</span>
           <div class="careers-message">
@@ -130,26 +176,18 @@
       `;
     }
 
-    // Fetch jobs.json
-    fetch('jobs.json')
-      .then(res => res.ok ? res.json() : Promise.reject())
-      .then(data => {
-        const container = document.getElementById('jobs-container');
-        if (Array.isArray(data) && data.length) {
-          container.innerHTML = renderJobs(data);
-          // Expand/collapse logic
-          document.querySelectorAll('.job-card').forEach(card => {
-            card.querySelector('.job-header').addEventListener('click', () => {
-              card.classList.toggle('expanded');
-            });
-          });
-        } else {
-          container.innerHTML = jobsFallback();
-        }
-      })
-      .catch(() => {
-        document.getElementById('jobs-container').innerHTML = jobsFallback();
+    // For legacy compatibility
+    function toggleJobDetails(header) {
+      const card = header.parentElement;
+      card.classList.toggle('expanded');
+      document.querySelectorAll('.job-card').forEach(other => {
+        if (other !== card) other.classList.remove('expanded');
       });
+    }
+
+    // Load jobs on page load
+    loadJobs();
+
   </script>
 </body>
 </html>
