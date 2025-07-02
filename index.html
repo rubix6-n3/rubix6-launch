@@ -3,57 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rubixvi - Development</title>
+  <title>Rubixvi</title>
+  <!-- Favicon (multi-resolution .ico) -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+
+    <!-- SEO (Optional) -->
+    <meta name="description" content="Rubixvi – Building something new. Aligning possibilities across dimensions." />
+    <meta name="theme-color" content="#f5f6fa" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f6fa;
+      color: #1e1e1e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    img {
+      width: 140px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #1e90ff, #00c8c8, #fbbc05, #ff5722);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .slogan {
+      font-size: 1.2rem;
+      font-weight: 500;
+      max-width: 640px;
+      line-height: 1.5;
+      opacity: 0;
+      animation: fadeIn 2s ease-out 0.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-  <!-- HERO SECTION -->
-  <div class="hero-section">
-    <div class="hero-container">
-      <img src="rubixvi_logo.png" alt="Rubixvi logo" />
-      <h1>Rubixvi</h1>
-      <div class="main-slogan" style="opacity:1; color: inherit; background: none;">Re-imagining global healthcare</div>
-      <div class="slogan" style="opacity:1; color: #666;">We're building something new.</div>
-      <a href="#about" class="get-started-btn" style="opacity:1;">Get started</a>
-    </div>
-  </div>
+  <img src="rubixvi_logo.png" alt="Rubixvi logo" />
+  
+  <h1>Rubixvi</h1>
 
-  <!-- CARDS SECTION -->
-  <section id="about" class="cards-section">
-    <div class="cards-container">
-      <div class="cards-grid">
-        <div class="card about-card">
-          <h3>About</h3>
-          <p>
-            Rubixvi is a healthcare innovation company based in Singapore, building a transformative medtech platform designed to change how care is experienced — starting from Asia, <strong>built for the world</strong>. Our founders bring deep expertise across healthcare and technology, combining real-world insight with a bold vision for what <strong>connected care</strong> can look like. We're focused on creating systems that work with <strong>clarity and purpose</strong> at their core.
-          </p>
-        </div>
-        <div class="card vision-card">
-          <h3>Vision</h3>
-          <p>
-            We envision a world where healthcare evolves with us — designed to support every step of life's journey. Through thoughtful design and purposeful technology, we're building systems that simplify care, connect experiences, and honor the people behind every interaction. We believe better care enables people to live with <strong>dignity</strong>, <strong>confidence</strong>, and the <strong>freedom to reach their full potential</strong>.
-          </p>
-        </div>
-        <div class="card join-card">
-          <h3>Join Us</h3>
-          <p>
-            We're looking for rockstars to join the team. If you think you've got what it takes to revolutionize healthcare, reach out to chat about a seat on the rocketship!
-          </p>
-          <a href="#careers" class="card-link">Find out more →</a>
-        </div>
-        <div class="card contact-card">
-          <h3>Contact</h3>
-          <p>
-            Ready to learn more or discuss partnership opportunities?
-          </p>
-          <a href="mailto:hello@rubixvi.com" class="card-link email-link">hello@rubixvi.com</a>
-          <p style="margin: 1rem 0 0.5rem;">Follow our journey on LinkedIn:</p>
-          <a href="https://www.linkedin.com/company/rubixvi/posts/" target="_blank" class="card-link linkedin-link">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="slogan">
+    We’re building something new.<br>
+    
+  </div>
 </body>
 </html>
