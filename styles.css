@@ -33,80 +33,9 @@ body {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   min-height: 100vh;
-  padding-bottom: 80px; /* space for footer */
+  padding-bottom: 80px; /* for footer */
 }
 
-.hero-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 90vh;
-  text-align: center;
-  padding: 2rem 0 1.5rem 0;
-}
-
-.hero-container {
-  max-width: 620px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.hero-container img {
-  width: 120px;
-  margin-bottom: 16px;
-}
-
-h1, .hero-title {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  margin: 0 0 1rem 0;
-  background: linear-gradient(90deg, #1e90ff, #00c8c8 50%, #fbbc05 80%, #ff5722 95%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.main-slogan, .hero-slogan {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  background: linear-gradient(90deg, #1e90ff, #00c8c8 80%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 0 0 0.5rem 0;
-}
-
-.slogan, .hero-sub {
-  font-size: var(--font-size-lg);
-  color: #888;
-  font-weight: var(--font-weight-medium);
-  margin-bottom: 1.5rem;
-}
-
-.get-started-btn {
-  display: inline-block;
-  padding: 12px 36px;
-  border: 2px solid var(--color-primary);
-  background: #fff;
-  color: var(--color-primary);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  border-radius: 32px;
-  cursor: pointer;
-  margin-top: 1rem;
-  transition: background 0.18s, color 0.18s, transform 0.13s;
-  box-shadow: 0 4px 14px rgba(30,144,255,0.07);
-  text-decoration: none;
-}
-.get-started-btn:hover {
-  background: var(--color-primary);
-  color: #fff;
-  transform: translateY(-2px) scale(1.04);
-}
-
-/* Cards Section */
 .cards-section {
   background: var(--color-bg-section);
   padding: 3.5rem 0;
@@ -181,7 +110,6 @@ h1, .hero-title {
   box-shadow: 0 6px 32px rgba(30, 144, 255, 0.09);
   padding-left: 2.5rem;
 }
-
 .join-card h3,
 .join-card .card-link {
   color: var(--color-primary);
@@ -194,18 +122,16 @@ h1, .hero-title {
   font-size: var(--font-size-base);
   padding-left: 2.5rem;
 }
-
 .contact-card .email-link, .contact-card .linkedin-link {
   color: var(--color-primary);
   font-weight: bold;
   text-decoration: none;
 }
-
 .contact-card .linkedin-link {
   margin-left: 0.5rem;
 }
 
-/* Careers/Join Our Team section below (optional styles for header) */
+/* Careers/Join Our Team section */
 .careers-section {
   background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 25%, #e0e0e0 50%, #e8e8e8 75%, #f0f0f0 100%);
   padding: 4rem 0 8rem 0;
@@ -221,22 +147,47 @@ h1, .hero-title {
   margin-bottom: 3rem;
 }
 .careers-title {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
   background: linear-gradient(to right, #1e90ff, #00c8c8, #fbbc05, #ff5722);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .careers-subtitle {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
+  font-size: 1.15rem;
+  font-weight: 500;
   color: #555555;
   margin-bottom: 3rem;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.5;
+}
+.careers-card {
+  background: #fff;
+  max-width: 480px;
+  margin: 2rem auto 0 auto;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 2.2rem 2rem 2rem 2rem;
+  text-align: center;
+}
+.careers-emoji {
+  font-size: 1.7rem;
+  color: #1e90ff;
+  display: block;
+  margin-bottom: 1rem;
+}
+.careers-message {
+  color: #222;
+  font-size: 1.1rem;
+  margin-top: 0.3rem;
+}
+.careers-message a {
+  color: #1e90ff;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* Responsive for mobile */
