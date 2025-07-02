@@ -4,230 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rubixvi - Development</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <style>
-    :root {
-      --font-size-3xl: 2.5rem;
-      --font-size-2xl: 2rem;
-      --font-size-xl: 1.5rem;
-      --font-size-lg: 1.25rem;
-      --font-size-base: 1rem;
-      --font-size-sm: 0.9rem;
-      --font-weight-bold: 700;
-      --font-weight-semibold: 600;
-      --font-weight-medium: 500;
-      --color-main: #1e90ff;
-      --color-secondary: #ff5722;
-      --color-accent: #fbbc05;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%, #f8f8f8 100%);
-      font-family: 'Poppins', sans-serif;
-      color: #2c2c2c;
-      min-height: 100vh;
-      scroll-behavior: smooth;
-    }
-    /* HERO SECTION */
-    .hero-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 95vh;
-      min-height: 580px;
-      text-align: center;
-      padding-top: 2.5rem;
-    }
-    .hero-container {
-      max-width: 650px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      width: 100%;
-    }
-    .hero-container img {
-      width: 140px;
-      margin-bottom: 18px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero-title {
-      font-size: var(--font-size-3xl);
-      font-weight: var(--font-weight-bold);
-      margin: 0 0 1rem 0;
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      background: linear-gradient(90deg, #90ea4c, #1cc1eb, #fbbc05, #ff5722 90%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-slogan {
-      font-size: var(--font-size-xl);
-      font-weight: var(--font-weight-bold);
-      margin: 0 0 0.7rem 0;
-      line-height: 1.1;
-      background: linear-gradient(90deg, #1e90ff, #27e6bc 50%, #fbbc05 85%, #ff5722);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-sub {
-      font-size: var(--font-size-lg);
-      color: #888;
-      font-weight: var(--font-weight-medium);
-      margin-bottom: 1.5rem;
-      margin-top: 0.2rem;
-    }
-    .get-started-btn {
-      display: inline-block;
-      padding: 13px 35px;
-      border: 2px solid #1e90ff;
-      background: #fff;
-      color: #1e90ff;
-      font-size: 1rem;
-      font-weight: var(--font-weight-semibold);
-      font-family: 'Poppins', sans-serif;
-      border-radius: 32px;
-      cursor: pointer;
-      margin-top: 1rem;
-      box-shadow: 0 4px 14px rgba(30,144,255,0.06);
-      transition: background 0.2s, color 0.2s, transform 0.15s;
-    }
-    .get-started-btn:hover {
-      background: #1e90ff;
-      color: #fff;
-      transform: translateY(-3px) scale(1.03);
-    }
-    /* CARDS SECTION */
-    .cards-section {
-      padding: 4rem 0 3.5rem 0;
-      background: #ededed;
-      min-height: 70vh;
-      width: 100vw;
-    }
-    .cards-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-    .cards-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas:
-        "about vision"
-        "join join"
-        "contact contact";
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-    .about-card { grid-area: about; }
-    .vision-card { grid-area: vision; }
-    .join-card { grid-area: join; }
-    .contact-card { grid-area: contact; }
-    .card {
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(30, 144, 255, 0.10);
-      padding: 2.2rem 2.1rem 1.6rem 2.1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      min-height: 120px;
-    }
-    .about-card h3,
-    .vision-card h3,
-    .join-card h3,
-    .contact-card h3 {
-      font-size: var(--font-size-xl);
-      font-weight: var(--font-weight-bold);
-      color: #1e90ff;
-      margin-bottom: 1.1rem;
-      margin-top: 0;
-    }
-    .join-card {
-      background: linear-gradient(90deg, #fbbc05 10%, #ff5722 100%);
-      color: #fff;
-      border: none;
-      min-height: 110px;
-      box-shadow: 0 6px 32px rgba(255, 87, 34, 0.09);
-      padding-left: 2.5rem;
-    }
-    .join-card h3,
-    .join-card .card-link {
-      color: #fff;
-    }
-    .join-card .card-link {
-      font-weight: bold;
-      margin-top: 1.2rem;
-      text-decoration: underline;
-      transition: color 0.2s, background 0.2s;
-    }
-    .join-card .card-link:hover {
-      color: #2c2c2c;
-      background: #fff;
-      border-radius: 4px;
-      padding: 2px 6px;
-    }
-    .contact-card {
-      background: #f6f7f8;
-      color: #222;
-      border: 1px solid #e0e0e0;
-      font-size: 1rem;
-      padding-left: 2.5rem;
-      opacity: 0.98;
-    }
-    .contact-card .email-link, .contact-card .linkedin-link {
-      color: #1e90ff;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .contact-card .linkedin-link {
-      margin-left: 0.5rem;
-    }
-    @media (max-width: 900px) {
-      .cards-grid {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-          "about"
-          "vision"
-          "join"
-          "contact";
-        gap: 1rem;
-      }
-      .join-card, .contact-card {
-        padding-left: 1rem;
-      }
-      .cards-container {
-        padding: 0 0.5rem;
-      }
-    }
-    /* Footer & extra spacing for demo */
-    .footer {
-      background: linear-gradient(90deg, #1e90ff 10%, #00c8c8 60%);
-      color: #fff;
-      padding: 1.6rem 0 1.2rem 0;
-      font-size: var(--font-size-sm);
-      text-align: center;
-      letter-spacing: 0.2px;
-      margin-top: 3rem;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- HERO SECTION -->
   <div class="hero-section">
     <div class="hero-container">
       <img src="rubixvi_logo.png" alt="Rubixvi logo" />
-      <div class="hero-title">Rubixvi</div>
-      <div class="hero-slogan">Re-imagining global healthcare</div>
-      <div class="hero-sub">We're building something new.</div>
-      <button class="get-started-btn" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
-        Get started
-      </button>
+      <h1>Rubixvi</h1>
+      <div class="main-slogan" style="opacity:1; color: inherit; background: none;">Re-imagining global healthcare</div>
+      <div class="slogan" style="opacity:1; color: #666;">We're building something new.</div>
+      <a href="#about" class="get-started-btn" style="opacity:1;">Get started</a>
     </div>
   </div>
 
@@ -252,7 +41,7 @@
           <p>
             We're looking for rockstars to join the team. If you think you've got what it takes to revolutionize healthcare, reach out to chat about a seat on the rocketship!
           </p>
-          <a href="#careers" onclick="document.getElementById('careers').scrollIntoView({behavior: 'smooth'})" class="card-link">Find out more →</a>
+          <a href="#careers" class="card-link">Find out more →</a>
         </div>
         <div class="card contact-card">
           <h3>Contact</h3>
@@ -266,11 +55,5 @@
       </div>
     </div>
   </section>
-
-  <!-- You can add your Careers or Jobs sections here as needed -->
-
-  <div class="footer">
-    © 2025 Rubixvi Pte Ltd | Singapore | Remote Worldwide | All rights reserved
-  </div>
 </body>
 </html>
