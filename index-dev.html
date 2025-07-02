@@ -10,19 +10,6 @@
 </head>
 <body>
 
-  <!-- HERO SECTION (optional) -->
-  <!--
-  <section class="hero-section">
-    <div class="hero-container">
-      <img src="rubixvi_logo.png" alt="Rubixvi logo" />
-      <h1 class="hero-title">Rubixvi</h1>
-      <div class="main-slogan">Re-imagining global healthcare</div>
-      <div class="slogan">We're building something new.</div>
-      <a href="#cards" class="get-started-btn">Get started</a>
-    </div>
-  </section>
-  -->
-
   <!-- CARDS SECTION -->
   <section id="cards" class="cards-section">
     <div class="cards-container">
@@ -34,7 +21,6 @@
             Rubixvi is a healthcare innovation company based in Singapore, building a transformative medtech platform designed to change how care is experienced — starting from Asia, <b>built for the world</b>. Our founders bring deep expertise across healthcare and technology, combining real-world insight with a bold vision for what <b>connected care</b> can look like. We’re focused on creating systems that work with <b>clarity and purpose</b> at their core.
           </p>
         </div>
-
         <!-- Vision Card -->
         <div class="card vision-card">
           <h3>Vision</h3>
@@ -42,7 +28,6 @@
             We envision a world where healthcare evolves with us — designed to support every step of life’s journey. Through thoughtful design and purposeful technology, we're building systems that simplify care, connect experiences, and honor the people behind every interaction. We believe better care enables people to live with <b>dignity, confidence</b>, and the <b>freedom to reach their full potential</b>.
           </p>
         </div>
-
         <!-- Join Us Card -->
         <div class="card join-card">
           <h3>Join Us</h3>
@@ -51,7 +36,6 @@
           </p>
           <a href="#careers" class="card-link">Find out more →</a>
         </div>
-
         <!-- Contact Card -->
         <div class="card contact-card">
           <h3>Contact</h3>
@@ -75,23 +59,9 @@
           We’re a <strong>stealth–mode healthcare innovation company</strong> building the next generation of healthcare applications. In our team, you'll enjoy the <strong>energy of a startup</strong> with <strong>people–centric impact</strong>, tremendous opportunities to work with an <strong>extraordinary team</strong> of smart, creative, fun, and <strong>highly motivated</strong> people, and flexible hours including remote work.
         </p>
       </div>
-      <div class="careers-card">
-        <span class="careers-emoji">🚀</span>
-        <div class="careers-message">
-          If you don’t see a job that matches your skills but you’re interested in joining our team,<br>
-          we’re always open to amazing individuals.<br>
-          <strong>Reach out directly at <a href="mailto:hello@rubixvi.com">hello@rubixvi.com</a></strong>
-        </div>
+      <div id="jobs-container">
+        <!-- Jobs will be injected here by JS -->
       </div>
-      <!-- Example jobs error/fallback:
-      <div class="careers-card error">
-        <span style="font-size:1.5rem;color:#fbbc05;">⚠️</span>
-        <div class="careers-message" style="color:#e55;">
-          Unable to Load Job Listings<br>
-          <small>We're having trouble loading our current job openings. Please try again later or contact us directly.</small>
-        </div>
-      </div>
-      -->
     </div>
   </section>
 
@@ -104,7 +74,7 @@
   </footer>
 
   <script>
-    // Show back-to-top when scrolling
+    // Back to Top Button logic
     const backToTopBtn = document.getElementById('backToTopBtn');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 180) {
@@ -116,6 +86,70 @@
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({top:0, behavior:'smooth'});
     });
+
+    // JOBS LOADING LOGIC
+    function renderJobs(jobs) {
+      if (!jobs.length) return false;
+      let html = `<div class="jobs-list">`;
+      for (const job of jobs) {
+        html += `
+          <div class="job-card">
+            <div class="job-header">
+              <div class="job-info">
+                <div class="job-title">${job.title || 'Untitled Role'}</div>
+                ${job.location ? `<div class="job-location">${job.location}</div>` : ''}
+                ${job.summary ? `<div class="job-summary">${job.summary}</div>` : ''}
+              </div>
+              <span class="job-arrow">▶</span>
+            </div>
+            <div class="job-details">
+              <div class="job-description">
+                ${job.description ? job.description : ''}
+                ${job.requirements ? `<h4>Requirements</h4><ul>${job.requirements.map(r=>`<li>${r}</li>`).join('')}</ul>` : ''}
+                ${job.responsibilities ? `<h4>Responsibilities</h4><ul>${job.responsibilities.map(r=>`<li>${r}</li>`).join('')}</ul>` : ''}
+                ${job.apply ? `<div class="job-cta"><a class="cta-button" href="mailto:${job.apply}?subject=Application for ${job.title}">Apply Now</a></div>` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      html += `</div>`;
+      return html;
+    }
+
+    function jobsFallback() {
+      return `
+        <div class="careers-card">
+          <span class="careers-emoji">🚀</span>
+          <div class="careers-message">
+            If you don’t see a job that matches your skills but you’re interested in joining our team,<br>
+            we’re always open to amazing individuals.<br>
+            <strong>Reach out directly at <a href="mailto:hello@rubixvi.com">hello@rubixvi.com</a></strong>
+          </div>
+        </div>
+      `;
+    }
+
+    // Fetch jobs.json
+    fetch('jobs.json')
+      .then(res => res.ok ? res.json() : Promise.reject())
+      .then(data => {
+        const container = document.getElementById('jobs-container');
+        if (Array.isArray(data) && data.length) {
+          container.innerHTML = renderJobs(data);
+          // Expand/collapse logic
+          document.querySelectorAll('.job-card').forEach(card => {
+            card.querySelector('.job-header').addEventListener('click', () => {
+              card.classList.toggle('expanded');
+            });
+          });
+        } else {
+          container.innerHTML = jobsFallback();
+        }
+      })
+      .catch(() => {
+        document.getElementById('jobs-container').innerHTML = jobsFallback();
+      });
   </script>
 </body>
 </html>
