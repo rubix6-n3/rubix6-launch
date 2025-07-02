@@ -4,48 +4,244 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rubixvi - Development</title>
-  <!-- Favicon (multi-resolution .ico) -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
-    <!-- SEO (Optional) -->
-    <meta name="description" content="Rubixvi – Re-imagining global healthcare. Building something new. Aligning possibilities across dimensions." />
-    <meta name="theme-color" content="#2c2c2c" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    :root {
+      --font-size-3xl: 2.5rem;
+      --font-size-2xl: 2rem;
+      --font-size-xl: 1.5rem;
+      --font-size-lg: 1.25rem;
+      --font-size-base: 1rem;
+      --font-size-sm: 0.9rem;
+      --font-weight-bold: 700;
+      --font-weight-semibold: 600;
+      --font-weight-medium: 500;
+      --color-main: #1e90ff;
+      --color-secondary: #ff5722;
+      --color-accent: #fbbc05;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%, #f8f8f8 100%);
+      font-family: 'Poppins', sans-serif;
+      color: #2c2c2c;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+    /* HERO SECTION */
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 95vh;
+      min-height: 580px;
+      text-align: center;
+      padding-top: 2.5rem;
+    }
+    .hero-container {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      width: 100%;
+    }
+    .hero-container img {
+      width: 140px;
+      margin-bottom: 18px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-title {
+      font-size: var(--font-size-3xl);
+      font-weight: var(--font-weight-bold);
+      margin: 0 0 1rem 0;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      background: linear-gradient(90deg, #90ea4c, #1cc1eb, #fbbc05, #ff5722 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-slogan {
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-bold);
+      margin: 0 0 0.7rem 0;
+      line-height: 1.1;
+      background: linear-gradient(90deg, #1e90ff, #27e6bc 50%, #fbbc05 85%, #ff5722);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: var(--font-size-lg);
+      color: #888;
+      font-weight: var(--font-weight-medium);
+      margin-bottom: 1.5rem;
+      margin-top: 0.2rem;
+    }
+    .get-started-btn {
+      display: inline-block;
+      padding: 13px 35px;
+      border: 2px solid #1e90ff;
+      background: #fff;
+      color: #1e90ff;
+      font-size: 1rem;
+      font-weight: var(--font-weight-semibold);
+      font-family: 'Poppins', sans-serif;
+      border-radius: 32px;
+      cursor: pointer;
+      margin-top: 1rem;
+      box-shadow: 0 4px 14px rgba(30,144,255,0.06);
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .get-started-btn:hover {
+      background: #1e90ff;
+      color: #fff;
+      transform: translateY(-3px) scale(1.03);
+    }
+    /* CARDS SECTION */
+    .cards-section {
+      padding: 4rem 0 3.5rem 0;
+      background: #ededed;
+      min-height: 70vh;
+      width: 100vw;
+    }
+    .cards-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "about vision"
+        "join join"
+        "contact contact";
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .about-card { grid-area: about; }
+    .vision-card { grid-area: vision; }
+    .join-card { grid-area: join; }
+    .contact-card { grid-area: contact; }
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(30, 144, 255, 0.10);
+      padding: 2.2rem 2.1rem 1.6rem 2.1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 120px;
+    }
+    .about-card h3,
+    .vision-card h3,
+    .join-card h3,
+    .contact-card h3 {
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-bold);
+      color: #1e90ff;
+      margin-bottom: 1.1rem;
+      margin-top: 0;
+    }
+    .join-card {
+      background: linear-gradient(90deg, #fbbc05 10%, #ff5722 100%);
+      color: #fff;
+      border: none;
+      min-height: 110px;
+      box-shadow: 0 6px 32px rgba(255, 87, 34, 0.09);
+      padding-left: 2.5rem;
+    }
+    .join-card h3,
+    .join-card .card-link {
+      color: #fff;
+    }
+    .join-card .card-link {
+      font-weight: bold;
+      margin-top: 1.2rem;
+      text-decoration: underline;
+      transition: color 0.2s, background 0.2s;
+    }
+    .join-card .card-link:hover {
+      color: #2c2c2c;
+      background: #fff;
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .contact-card {
+      background: #f6f7f8;
+      color: #222;
+      border: 1px solid #e0e0e0;
+      font-size: 1rem;
+      padding-left: 2.5rem;
+      opacity: 0.98;
+    }
+    .contact-card .email-link, .contact-card .linkedin-link {
+      color: #1e90ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .contact-card .linkedin-link {
+      margin-left: 0.5rem;
+    }
+    @media (max-width: 900px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "about"
+          "vision"
+          "join"
+          "contact";
+        gap: 1rem;
+      }
+      .join-card, .contact-card {
+        padding-left: 1rem;
+      }
+      .cards-container {
+        padding: 0 0.5rem;
+      }
+    }
+    /* Footer & extra spacing for demo */
+    .footer {
+      background: linear-gradient(90deg, #1e90ff 10%, #00c8c8 60%);
+      color: #fff;
+      padding: 1.6rem 0 1.2rem 0;
+      font-size: var(--font-size-sm);
+      text-align: center;
+      letter-spacing: 0.2px;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
+  <!-- HERO SECTION -->
   <div class="hero-section">
     <div class="hero-container">
       <img src="rubixvi_logo.png" alt="Rubixvi logo" />
-      
-      <h1>Rubixvi</h1>
-
-      <div class="main-slogan">
-        Re‑imagining global healthcare
-      </div>
-
-      <div class="slogan">
-        We're building something new.
-      </div>
-
+      <div class="hero-title">Rubixvi</div>
+      <div class="hero-slogan">Re-imagining global healthcare</div>
+      <div class="hero-sub">We're building something new.</div>
       <button class="get-started-btn" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
         Get started
       </button>
     </div>
   </div>
 
+  <!-- CARDS SECTION -->
   <section id="about" class="cards-section">
     <div class="cards-container">
-      <div class="cards-grid custom-layout">
-        <div class="card modern-card about-card">
+      <div class="cards-grid">
+        <div class="card about-card">
           <h3>About</h3>
           <p>
             Rubixvi is a healthcare innovation company based in Singapore, building a transformative medtech platform designed to change how care is experienced — starting from Asia, <strong>built for the world</strong>. Our founders bring deep expertise across healthcare and technology, combining real-world insight with a bold vision for what <strong>connected care</strong> can look like. We're focused on creating systems that work with <strong>clarity and purpose</strong> at their core.
           </p>
         </div>
-        <div class="card modern-card vision-card">
+        <div class="card vision-card">
           <h3>Vision</h3>
           <p>
             We envision a world where healthcare evolves with us — designed to support every step of life's journey. Through thoughtful design and purposeful technology, we're building systems that simplify care, connect experiences, and honor the people behind every interaction. We believe better care enables people to live with <strong>dignity</strong>, <strong>confidence</strong>, and the <strong>freedom to reach their full potential</strong>.
@@ -71,369 +267,10 @@
     </div>
   </section>
 
-  <section id="careers" class="careers-section">
-    <div class="careers-container">
-      <div class="careers-header">
-        <h2 class="careers-title">Join Our Team</h2>
-        <p class="careers-subtitle">We're a <strong>stealth-mode healthcare innovation company</strong> building the next generation of healthcare applications. In our team, you'll enjoy the <strong>energy of a startup</strong> with <strong>people-centric impact</strong>, tremendous opportunities to work with an <strong>extraordinary team</strong> of smart, creative, fun, and <strong>highly motivated</strong> people, and flexible hours including remote work.</p>
-      </div>
-      
-      <div id="jobs-container">
-        <!-- Jobs will be loaded here dynamically -->
-      </div>
-    </div>
-  </section>
+  <!-- You can add your Careers or Jobs sections here as needed -->
 
-  <button class="back-to-top" onclick="handleNavigation()">
-    <span class="nav-arrow">↑</span>
-  </button>
-
-  <footer class="footer">
-    <p>© 2025 Rubixvi Pte Ltd | Singapore | Remote Worldwide | All rights reserved</p>
-  </footer>
-
-  <script>
-    function toggleJobDetails(jobCard) {
-      // Close all other expanded job cards
-      const allJobCards = document.querySelectorAll('.job-card');
-      allJobCards.forEach(card => {
-        if (card !== jobCard) {
-          card.classList.remove('expanded');
-        }
-      });
-      
-      // Toggle the clicked card
-      jobCard.classList.toggle('expanded');
-      
-      // Check if content is scrollable after expansion
-      if (jobCard.classList.contains('expanded')) {
-        setTimeout(() => {
-          checkScrollability(jobCard);
-        }, 500); // Wait for CSS transition to complete
-      }
-    }
-
-    function checkScrollability(jobCard) {
-      const jobDetails = jobCard.querySelector('.job-details');
-      if (jobDetails.scrollHeight > jobDetails.clientHeight) {
-        jobDetails.classList.add('has-scroll');
-        
-        // Hide scroll indicator when user scrolls near bottom
-        jobDetails.addEventListener('scroll', function() {
-          const scrollPercentage = (this.scrollTop + this.clientHeight) / this.scrollHeight;
-          if (scrollPercentage > 0.9) {
-            this.classList.remove('has-scroll');
-          }
-        });
-      } else {
-        jobDetails.classList.remove('has-scroll');
-      }
-    }
-
-    // Footer and navigation button scroll animation
-    function handleScrollAnimations() {
-      const footer = document.querySelector('.footer');
-      const backToTop = document.querySelector('.back-to-top');
-      const navArrow = document.querySelector('.nav-arrow');
-      const careersSection = document.getElementById('careers');
-      const careersRect = careersSection.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const scrollY = window.scrollY;
-      
-      // Show footer when careers section is 70% visible
-      if (careersRect.top <= windowHeight * 0.3) {
-        footer.classList.add('visible');
-      } else {
-        footer.classList.remove('visible');
-      }
-
-      // Show navigation button when scrolled past hero section
-      if (scrollY > windowHeight * 0.5) {
-        backToTop.classList.add('visible');
-        
-        // Change arrow direction based on current section
-        // If in cards section, show down arrow; if in careers section, show up arrow
-        if (careersRect.top > windowHeight * 0.8) {
-          // User is in cards section
-          navArrow.textContent = '↓';
-        } else {
-          // User is in careers section or beyond
-          navArrow.textContent = '↑';
-        }
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    }
-
-    // Listen for scroll events
-    window.addEventListener('scroll', handleScrollAnimations);
-    
-    // Check on initial load
-    handleScrollAnimations();
-
-
-    // Load and render jobs from JSON
-    async function loadJobs() {
-      try {
-        const response = await fetch('./jobs.json');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        renderJobs(data.jobs);
-      } catch (error) {
-        console.warn('Could not load jobs.json:', error);
-        // Show error message instead of fallback data
-        const container = document.getElementById('jobs-container');
-        container.innerHTML = `
-          <div style="
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            margin: 2rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-          ">
-            <h3 style="
-              color: #ff6b6b;
-              margin-bottom: 1rem;
-              font-size: 1.2rem;
-            ">⚠️ Unable to Load Job Listings</h3>
-            <p style="
-              color: #666;
-              margin: 0;
-              line-height: 1.5;
-            ">We're having trouble loading our current job openings. Please try again later or contact us directly.</p>
-          </div>
-        `;
-      }
-    }
-
-    function renderJobs(jobs) {
-      const container = document.getElementById('jobs-container');
-      console.log('Rendering', jobs.length, 'jobs');
-      
-      jobs.forEach((job, index) => {
-        console.log('Creating job card for:', job.title);
-        const jobCard = document.createElement('div');
-        jobCard.className = 'job-card';
-        jobCard.onclick = () => toggleJobDetails(jobCard);
-        
-        jobCard.innerHTML = `
-          <div class="job-header">
-            <div class="job-info">
-              <div class="job-title">${job.title}</div>
-              <div class="job-location">${job.location}</div>
-              <div class="job-summary">${job.summary}</div>
-            </div>
-            <div class="job-arrow">→</div>
-          </div>
-          <div class="job-details">
-            <div class="scroll-indicator">↓</div>
-            <div class="job-description">
-              ${job.description.map(p => `<p>${p}</p>`).join('')}
-              
-              <h4>Requirements</h4>
-              <ul>
-                ${job.requirements.map(req => `<li>${req}</li>`).join('')}
-              </ul>
-
-              <h4>Who You Are</h4>
-              <ul>
-                ${job.whoYouAre.map(trait => `<li>${trait}</li>`).join('')}
-              </ul>
-
-              <h4>What You Will Do</h4>
-              <ul>
-                ${job.whatYouWillDo.map(task => `<li>${task}</li>`).join('')}
-              </ul>
-
-              <h4>Contract & Setup</h4>
-              <ul>
-                ${job.contractSetup.map(item => `<li>${item}</li>`).join('')}
-              </ul>
-
-              <div class="job-cta">
-                <div class="job-separator"></div>
-                <p class="cta-text">Interested in this role? We'd love to hear from you!</p>
-                <button class="cta-button" onclick="event.stopPropagation(); showConfirmation(this, '${encodeURIComponent(job.title)}')">
-                  Apply for this position →
-                </button>
-                <div class="email-notice" style="display: none;">
-                  <p>📧 This will open your email client and direct you to: <strong>hello@rubixvi.com</strong></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        `;
-        
-        container.appendChild(jobCard);
-      });
-    }
-
-    // Load jobs when page loads
-    loadJobs();
-
-    // Show confirmation when apply button is clicked
-    function showConfirmation(button, jobTitle) {
-      const notice = button.parentElement.querySelector('.email-notice');
-      
-      // Store original button content
-      const originalText = button.innerHTML;
-      
-      // Change button to confirmation state
-      button.innerHTML = 'Open Email Client';
-      button.classList.add('confirmation-state');
-      notice.style.display = 'block';
-      
-      // Add click handler for actual email action
-      const confirmHandler = function(e) {
-        e.stopPropagation();
-        window.location.href = `mailto:hello@rubixvi.com?subject=Application for ${decodeURIComponent(jobTitle)} Position`;
-        
-        // Reset button after email action
-        resetButton();
-      };
-      
-      button.onclick = confirmHandler;
-      
-      // Reset function
-      function resetButton() {
-        button.innerHTML = originalText;
-        button.classList.remove('confirmation-state');
-        notice.style.display = 'none';
-        button.onclick = (e) => {
-          e.stopPropagation();
-          showConfirmation(button, jobTitle);
-        };
-      }
-      
-      // Auto-reset after 5 seconds if no action
-      setTimeout(resetButton, 5000);
-    }
-
-    // Section navigation functionality
-    function handleNavigation() {
-      const sections = [
-        document.querySelector('.hero-section'),
-        document.getElementById('about'),
-        document.getElementById('careers')
-      ];
-      
-      const careersSection = document.getElementById('careers');
-      const careersRect = careersSection.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      // If in cards section (down arrow showing), go to careers
-      if (careersRect.top > windowHeight * 0.8) {
-        careersSection.scrollIntoView({behavior: 'smooth'});
-      } else {
-        // If in careers section (up arrow showing), go back up
-        const currentScrollY = window.scrollY;
-        let targetSection = sections[0]; // Default to hero
-        
-        if (currentScrollY >= sections[2].offsetTop - windowHeight * 0.3) {
-          // In careers section, go to cards section
-          targetSection = sections[1];
-        } else if (currentScrollY >= sections[1].offsetTop - windowHeight * 0.3) {
-          // In cards section, go to hero section
-          targetSection = sections[0];
-        }
-        
-        targetSection.scrollIntoView({behavior: 'smooth'});
-      }
-    }
-
-    // Anime.js animations
-    // Hero section animations
-    anime.timeline()
-      .add({
-        targets: 'img',
-        translateY: [-30, 0],
-        opacity: [0, 1],
-        duration: 800,
-        easing: 'easeOutExpo'
-      })
-      .add({
-        targets: 'h1',
-        translateY: [-20, 0],
-        opacity: [0, 1],
-        duration: 600,
-        easing: 'easeOutExpo'
-      }, '-=400')
-      .add({
-        targets: '.main-slogan',
-        translateY: [-20, 0],
-        opacity: [0, 1],
-        duration: 600,
-        easing: 'easeOutExpo'
-      }, '-=300')
-      .add({
-        targets: '.slogan',
-        translateY: [-20, 0],
-        opacity: [0, 1],
-        duration: 600,
-        easing: 'easeOutExpo'
-      }, '-=200')
-      .add({
-        targets: '.get-started-btn',
-        translateY: [-20, 0],
-        opacity: [0, 1],
-        duration: 600,
-        easing: 'easeOutExpo'
-      }, '-=100');
-
-    // Cards animation on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (entry.target.classList.contains('card')) {
-            anime({
-              targets: entry.target,
-              translateY: [50, 0],
-              opacity: [0, 1],
-              duration: 800,
-              easing: 'easeOutExpo',
-              delay: anime.stagger(100)
-            });
-          } else if (entry.target.classList.contains('job-card')) {
-            anime({
-              targets: entry.target,
-              translateY: [30, 0],
-              opacity: [0, 1],
-              duration: 600,
-              easing: 'easeOutExpo'
-            });
-          } else if (entry.target.classList.contains('careers-title')) {
-            anime({
-              targets: '.careers-title',
-              translateY: [-30, 0],
-              opacity: [0, 1],
-              duration: 800,
-              easing: 'easeOutExpo'
-            });
-          } else if (entry.target.classList.contains('careers-subtitle')) {
-            anime({
-              targets: '.careers-subtitle',
-              translateY: [-20, 0],
-              opacity: [0, 1],
-              duration: 600,
-              easing: 'easeOutExpo',
-              delay: 200
-            });
-          }
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    // Observe elements for animation
-    document.querySelectorAll('.card, .job-card, .careers-title, .careers-subtitle').forEach(el => {
-      el.style.opacity = '0';
-      observer.observe(el);
-    });
-
-  </script>
+  <div class="footer">
+    © 2025 Rubixvi Pte Ltd | Singapore | Remote Worldwide | All rights reserved
+  </div>
 </body>
 </html>
