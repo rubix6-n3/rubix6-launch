@@ -9,33 +9,41 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- HERO SECTION -->
-  <div class="hero-section">
+
+  <!-- HERO SECTION (optional) -->
+  <!--
+  <section class="hero-section">
     <div class="hero-container">
       <img src="rubixvi_logo.png" alt="Rubixvi logo" />
-      <h1>Rubixvi</h1>
+      <h1 class="hero-title">Rubixvi</h1>
       <div class="main-slogan">Re-imagining global healthcare</div>
       <div class="slogan">We're building something new.</div>
-      <a href="#about" class="get-started-btn">Get started</a>
+      <a href="#cards" class="get-started-btn">Get started</a>
     </div>
-  </div>
+  </section>
+  -->
 
   <!-- CARDS SECTION -->
-  <section id="about" class="cards-section">
+  <section id="cards" class="cards-section">
     <div class="cards-container">
       <div class="cards-grid">
+        <!-- About Card -->
         <div class="card about-card">
           <h3>About</h3>
           <p>
-            Rubixvi is a healthcare innovation company based in Singapore, building a transformative medtech platform designed to change how care is experienced — starting from Asia, <strong>built for the world</strong>. Our founders bring deep expertise across healthcare and technology, combining real-world insight with a bold vision for what <strong>connected care</strong> can look like. We're focused on creating systems that work with <strong>clarity and purpose</strong> at their core.
+            Rubixvi is a healthcare innovation company based in Singapore, building a transformative medtech platform designed to change how care is experienced — starting from Asia, <b>built for the world</b>. Our founders bring deep expertise across healthcare and technology, combining real-world insight with a bold vision for what <b>connected care</b> can look like. We’re focused on creating systems that work with <b>clarity and purpose</b> at their core.
           </p>
         </div>
+
+        <!-- Vision Card -->
         <div class="card vision-card">
           <h3>Vision</h3>
           <p>
-            We envision a world where healthcare evolves with us — designed to support every step of life's journey. Through thoughtful design and purposeful technology, we're building systems that simplify care, connect experiences, and honor the people behind every interaction. We believe better care enables people to live with <strong>dignity</strong>, <strong>confidence</strong>, and the <strong>freedom to reach their full potential</strong>.
+            We envision a world where healthcare evolves with us — designed to support every step of life’s journey. Through thoughtful design and purposeful technology, we're building systems that simplify care, connect experiences, and honor the people behind every interaction. We believe better care enables people to live with <b>dignity, confidence</b>, and the <b>freedom to reach their full potential</b>.
           </p>
         </div>
+
+        <!-- Join Us Card -->
         <div class="card join-card">
           <h3>Join Us</h3>
           <p>
@@ -43,20 +51,22 @@
           </p>
           <a href="#careers" class="card-link">Find out more →</a>
         </div>
+
+        <!-- Contact Card -->
         <div class="card contact-card">
           <h3>Contact</h3>
           <p>
-            Ready to learn more or discuss partnership opportunities?
+            Ready to learn more or discuss partnership opportunities?<br><br>
+            <a href="mailto:hello@rubixvi.com" class="email-link">hello@rubixvi.com</a><br><br>
+            Follow our journey on LinkedIn:
+            <a href="https://www.linkedin.com/company/rubixvi" target="_blank" rel="noopener" class="linkedin-link">LinkedIn</a>
           </p>
-          <a href="mailto:hello@rubixvi.com" class="card-link email-link">hello@rubixvi.com</a>
-          <p style="margin: 1rem 0 0.5rem;">Follow our journey on LinkedIn:</p>
-          <a href="https://www.linkedin.com/company/rubixvi/posts/" target="_blank" rel="noopener" class="card-link linkedin-link">LinkedIn</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- JOIN OUR TEAM SECTION + JOBS LISTING -->
+  <!-- CAREERS / JOIN OUR TEAM SECTION -->
   <section id="careers" class="careers-section">
     <div class="careers-container">
       <div class="careers-header">
@@ -65,37 +75,47 @@
           We’re a <strong>stealth–mode healthcare innovation company</strong> building the next generation of healthcare applications. In our team, you'll enjoy the <strong>energy of a startup</strong> with <strong>people–centric impact</strong>, tremendous opportunities to work with an <strong>extraordinary team</strong> of smart, creative, fun, and <strong>highly motivated</strong> people, and flexible hours including remote work.
         </p>
       </div>
-      <!-- JOBS LISTINGS (JS can inject here) -->
-      <div id="jobs-container">
-        <div style="background:#fff; max-width:440px; margin:2rem auto 0 auto; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.08); padding:2.2rem 2rem 2rem 2rem; text-align:center;">
-          <span style="font-size:1.5rem; color:#1e90ff;">&#128640;</span>
-          <div style="color:#222; font-size:1.1rem; margin-top:1rem;">
-            If you don’t see a job that matches your skills, but you’re interested in joining our team,<br>
-            we’re always open to amazing individuals.<br>
-            <strong>Reach out directly at <a href="mailto:hello@rubixvi.com">hello@rubixvi.com</a></strong>
-          </div>
+      <div class="careers-card">
+        <span class="careers-emoji">🚀</span>
+        <div class="careers-message">
+          If you don’t see a job that matches your skills but you’re interested in joining our team,<br>
+          we’re always open to amazing individuals.<br>
+          <strong>Reach out directly at <a href="mailto:hello@rubixvi.com">hello@rubixvi.com</a></strong>
         </div>
       </div>
+      <!-- Example jobs error/fallback:
+      <div class="careers-card error">
+        <span style="font-size:1.5rem;color:#fbbc05;">⚠️</span>
+        <div class="careers-message" style="color:#e55;">
+          Unable to Load Job Listings<br>
+          <small>We're having trouble loading our current job openings. Please try again later or contact us directly.</small>
+        </div>
+      </div>
+      -->
     </div>
   </section>
 
-  <!-- BLUE FOOTER BAR -->
-  <footer class="footer visible">
-    <p>
-      © 2025 Rubixvi Pte Ltd | Singapore | Remote Worldwide | All rights reserved
-    </p>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top" id="backToTopBtn" title="Back to top">↑</button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Rubixvi Pte Ltd | Singapore | Remote Worldwide | All rights reserved</p>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top" type="button">↑</button>
   <script>
-    // Show/hide back-to-top button
-    window.onscroll = function() {
-      document.getElementById("backToTopBtn").classList.toggle("visible", window.scrollY > 180);
-    };
-    document.getElementById("backToTopBtn").onclick = function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+    // Show back-to-top when scrolling
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 180) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
   </script>
 </body>
 </html>
