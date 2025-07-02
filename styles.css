@@ -1,3 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Typography Scale */
+  --font-size-3xl: 2.5rem;    /* 40px - Main titles */
+  --font-size-2xl: 2rem;      /* 32px - Section headings */
+  --font-size-xl: 1.5rem;     /* 24px - Card headings */
+  --font-size-lg: 1.25rem;    /* 20px - Slogans, subtitles */
+  --font-size-base: 1rem;     /* 16px - Body text */
+  --font-size-sm: 0.875rem;   /* 14px - Small text */
+  
+  /* Font Weights */
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%, #f8f8f8 100%);
+  color: #2c2c2c;
+  text-align: center;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 4rem 0;
+}
+
+.hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+img {
+  width: 140px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #1e90ff, #00c8c8, #fbbc05, #ff5722);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-slogan {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 3.5rem;
+  background: linear-gradient(to right, #1e90ff, #00c8c8, #fbbc05, #ff5722);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+}
+
+.slogan {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  max-width: 800px;
+  line-height: 1.5;
+  color: #666666;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.get-started-btn {
+  display: inline-block;
+  padding: 12px 32px;
+  margin-top: 0;
+  border: 2px solid #1e90ff;
+  background: transparent;
+  color: #1e90ff;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  border-radius: 25px;
+}
+
+.get-started-btn:hover {
+  background: linear-gradient(135deg, rgba(30, 144, 255, 0.8), rgba(0, 200, 200, 0.6));
+  color: #ffffff;
+  transform: translateY(-2px);
+  border-color: rgba(30, 144, 255, 0.8);
+  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+}
+
+.cards-section {
+  background: linear-gradient(135deg, #ececec 0%, #e0e0e0 25%, #d8d8d8 50%, #e0e0e0 75%, #ececec 100%);
+  padding: 4rem 0;
+  min-height: 100vh;
+}
+
+.cards-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- 4-CARD GRID CUSTOM LAYOUT START --- */
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -102,4 +225,8 @@
     padding-left: 1rem;
   }
 }
+/* --- 4-CARD GRID CUSTOM LAYOUT END --- */
 
+/* (the rest of your original styles untouched below...) */
+
+/* ... careers-section, jobs, footer, etc. ... (as in your upload) */
