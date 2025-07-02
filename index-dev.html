@@ -7,6 +7,10 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Optionally ensure html/body are full height for gradient on all screens */
+    html, body { height: 100%; min-height: 100%; }
+  </style>
 </head>
 <body>
   <!-- HERO SECTION -->
@@ -62,19 +66,28 @@
       <div class="careers-header">
         <h2 class="careers-title">Join Our Team</h2>
         <p class="careers-subtitle">
-          We’re a <strong>stealth-mode healthcare innovation company</strong> building the next generation of healthcare applications. In our team, you'll enjoy the <strong>energy of a startup</strong> with <strong>people-centric impact</strong>, opportunities to work with an <strong>extraordinary team</strong>, and flexible hours including remote work.
+          We’re a <strong>stealth–mode healthcare innovation company</strong> building the next generation of healthcare applications. In our team, you'll enjoy the <strong>energy of a startup</strong> with <strong>people–centric impact</strong>, tremendous opportunities to work with an <strong>extraordinary team</strong> of smart, creative, fun, and <strong>highly motivated</strong> people, and flexible hours including remote work.
         </p>
       </div>
-      <!-- JOBS LISTINGS WILL LOAD HERE (by JS) -->
+      <!-- JOBS LISTINGS (JS can inject here) -->
       <div id="jobs-container">
-        <!-- Your JavaScript or backend will inject job cards here.
-             If none are available, you can use this as fallback: -->
-        <div style="text-align:center; color: #888; font-size: 1.1rem;">
-          We are not hiring right now, but you can always reach out at <a href="mailto:hello@rubixvi.com">hello@rubixvi.com</a>
+        <div style="text-align:center; color: #888; font-size: 1.1rem; margin-top: 2.2rem;">
+          If you don't see a job that matches your skills, but you’re interested in joining our team, we’re always open to amazing individuals.<br>
+          Reach out directly at <a href="mailto:hello@rubixvi.com">hello@rubixvi.com</a>!
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">↑</button>
+  <script>
+    window.onscroll = function() {
+      document.getElementById("backToTopBtn").classList.toggle("visible", window.scrollY > 180);
+    };
+    document.getElementById("backToTopBtn").onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
 </body>
 </html>
