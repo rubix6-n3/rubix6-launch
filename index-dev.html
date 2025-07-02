@@ -6,10 +6,340 @@
   <title>Rubixvi - Development</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Rubixvi – Re-imagining global healthcare. Building something new. Aligning possibilities across dimensions." />
+  <meta name="theme-color" content="#2c2c2c" />
   <style>
-/* ... [CSS from previous message is unchanged, paste the full CSS block here from the previous answer] ... */
+    :root {
+      --color-primary: #1e90ff;
+      --color-accent: #00c8c8;
+      --color-bg: #f4f6f8;
+      --color-bg-section: #ececec;
+      --color-text: #2c2c2c;
+      --color-card-bg: #fff;
+      --color-card-shadow: rgba(30, 144, 255, 0.08);
+      --font-size-3xl: 2.5rem;
+      --font-size-2xl: 2rem;
+      --font-size-xl: 1.5rem;
+      --font-size-lg: 1.15rem;
+      --font-size-base: 1rem;
+      --font-size-sm: 0.9rem;
+      --font-weight-bold: 700;
+      --font-weight-semibold: 600;
+      --font-weight-medium: 500;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: linear-gradient(135deg, #f8f8f8 0%, #ececec 100%);
+      margin: 0;
+      color: var(--color-text);
+      font-family: 'Poppins', sans-serif;
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+    .hero-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      background: #fff;
+    }
+    .hero-container {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 24px 60px 24px;
+    }
+    .hero-container img {
+      width: 150px;
+      max-width: 90vw;
+      margin-bottom: 18px;
+    }
+    .hero-container h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0 0 0.6rem 0;
+      background: linear-gradient(90deg, #1e90ff, #00c8c8 50%, #fbbc05 80%, #ff5722 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .main-slogan {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1e90ff;
+    }
+    .slogan {
+      font-size: 1.08rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    .get-started-btn {
+      display: inline-block;
+      padding: 13px 36px;
+      border: 2px solid #1e90ff;
+      background: #fff;
+      color: #1e90ff;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 32px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(30,144,255,0.07);
+      text-decoration: none;
+      transition: background 0.18s, color 0.18s, transform 0.13s;
+    }
+    .get-started-btn:hover {
+      background: #1e90ff;
+      color: #fff;
+      transform: translateY(-2px) scale(1.04);
+    }
+    .cards-section {
+      background: var(--color-bg-section);
+      padding: 3.5rem 0;
+    }
+    .cards-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "about vision"
+        "join contact";
+      gap: 2rem;
+    }
+    .card {
+      background: var(--color-card-bg);
+      border-radius: 15px;
+      box-shadow: 0 4px 20px var(--color-card-shadow);
+      padding: 2.1rem 2rem 1.7rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .card h3 {
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      margin-bottom: 1.1rem;
+      margin-top: 0;
+    }
+    .card p {
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: #444;
+      margin: 0 0 0.9rem 0;
+    }
+    .card-link {
+      color: var(--color-primary);
+      font-weight: var(--font-weight-semibold);
+      text-decoration: underline;
+      cursor: pointer;
+      transition: color 0.18s, background 0.15s;
+    }
+    .card-link:hover {
+      color: #fff;
+      background: var(--color-primary);
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    /* Responsive for mobile */
+    @media (max-width: 900px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "about"
+          "vision"
+          "join"
+          "contact";
+        gap: 1.1rem;
+      }
+      .cards-container { padding: 0 0.5rem; }
+      .card { padding: 1.3rem 1.1rem 1rem 1.1rem; }
+    }
+    /* Careers/Join Our Team section */
+    .careers-section {
+      background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 25%, #e0e0e0 50%, #e8e8e8 75%, #f0f0f0 100%);
+      padding: 4rem 0 8rem 0;
+      min-height: 60vh;
+    }
+    .careers-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .careers-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .careers-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #1e90ff, #00c8c8, #fbbc05, #ff5722);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .careers-subtitle {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #555555;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+    /* Jobs styles */
+    .job-card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      margin: 2rem 0;
+      padding: 1.5rem 2rem 1rem 2rem;
+      transition: box-shadow 0.15s;
+      cursor: pointer;
+      position: relative;
+    }
+    .job-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .job-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .job-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1e90ff;
+    }
+    .job-location {
+      font-size: 1rem;
+      color: #888;
+      margin: 2px 0 7px 0;
+    }
+    .job-summary {
+      font-size: 1.06rem;
+      color: #444;
+      margin-bottom: 0.5rem;
+    }
+    .job-arrow {
+      font-size: 2rem;
+      color: #1e90ff;
+      padding-left: 1rem;
+      transition: transform 0.2s;
+      margin-top: -5px;
+    }
+    .job-card.expanded .job-arrow {
+      transform: rotate(90deg);
+    }
+    .job-details {
+      display: none;
+      margin-top: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-top: 1px solid #eee;
+      animation: fadein 0.3s;
+    }
+    .job-card.expanded .job-details {
+      display: block;
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .job-details h4 {
+      margin-top: 1.4rem;
+      margin-bottom: 0.6rem;
+      color: #1e90ff;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .job-details ul {
+      margin: 0 0 1.2rem 1.2rem;
+      padding: 0;
+      font-size: 1rem;
+    }
+    .job-details li {
+      margin-bottom: 0.38rem;
+    }
+    .job-cta {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.7em 1.8em;
+      border-radius: 30px;
+      background: #1e90ff;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(30,144,255,0.09);
+      transition: background 0.14s;
+    }
+    .cta-button:hover {
+      background: #00c8c8;
+    }
+    /* Footer */
+    .footer {
+      width: 100vw;
+      background: linear-gradient(90deg, #1e90ff, #00c8c8 50%, #1e90ff 100%);
+      padding: 1rem 0 0.9rem 0;
+      text-align: center;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      z-index: 200;
+      box-shadow: 0 -4px 16px rgba(30, 144, 255, 0.14);
+    }
+    .footer p {
+      margin: 0;
+      letter-spacing: 0.03em;
+      font-size: 1rem;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 64px;
+      right: 2rem;
+      background: linear-gradient(135deg, #1e90ff, #00c8c8);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+      opacity: 0;
+      transform: translateY(24px);
+      pointer-events: none;
+      z-index: 9999;
+      transition: opacity 0.22s, transform 0.18s;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .back-to-top:hover {
+      background: linear-gradient(135deg, #1e90ff 80%, #00c8c8 100%);
+      transform: translateY(-3px) scale(1.08);
+    }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
   <div class="hero-section">
@@ -26,28 +356,31 @@
       <div class="cards-grid">
         <div class="card about-card">
           <h3>About</h3>
-          <p>Rubixvi is a healthcare innovation company based in Singapore, building a transformative medtech platform designed to change how care is experienced — starting from Asia, <strong>built for the world</strong>. Our founders bring deep expertise across healthcare and technology, combining real-world insight with a bold vision for what <strong>connected care</strong> can look like. We're focused on creating systems that work with <strong>clarity and purpose</strong> at their core.</p>
+          <p>
+            Rubixvi is a healthcare innovation company based in Singapore, building a transformative medtech platform designed to change how care is experienced — starting from Asia, <b>built for the world</b>. Our founders bring deep expertise across healthcare and technology, combining real-world insight with a bold vision for what <b>connected care</b> can look like. We’re focused on creating systems that work with <b>clarity and purpose</b> at their core.
+          </p>
         </div>
         <div class="card vision-card">
           <h3>Vision</h3>
-          <p>We envision a world where healthcare evolves with us — designed to support every step of life's journey. Through thoughtful design and purposeful technology, we're building systems that simplify care, connect experiences, and honor the people behind every interaction. We believe better care enables people to live with <strong>dignity</strong>, <strong>confidence</strong>, and the <strong>freedom to reach their full potential</strong>.</p>
+          <p>
+            We envision a world where healthcare evolves with us — designed to support every step of life’s journey. Through thoughtful design and purposeful technology, we're building systems that simplify care, connect experiences, and honor the people behind every interaction. We believe better care enables people to live with <b>dignity, confidence</b>, and the <b>freedom to reach their full potential</b>.
+          </p>
         </div>
         <div class="card join-card">
           <h3>Join Us</h3>
-          <p>We're looking for rockstars to join the team. If you think you've got what it takes to revolutionize healthcare, reach out to chat about a seat on the rocketship!</p>
+          <p>
+            We're looking for rockstars to join the team. If you think you've got what it takes to revolutionize healthcare, reach out to chat about a seat on the rocketship!
+          </p>
           <a href="#careers" onclick="document.getElementById('careers').scrollIntoView({behavior: 'smooth'})" class="card-link">Find out more →</a>
         </div>
         <div class="card contact-card">
           <h3>Contact</h3>
-          <p>Ready to learn more or discuss partnership opportunities?</p>
-          <a href="mailto:hello@rubixvi.com" class="card-link">hello@rubixvi.com</a>
-          <p style="margin-top: 1rem; margin-bottom: 0.5rem;">Follow our journey on LinkedIn:</p>
-          <a href="https://www.linkedin.com/company/rubixvi/posts/" target="_blank" class="card-link">
-            <svg style="width: 16px; height: 16px; vertical-align: -2px; margin-right: 4px;" fill="#1e90ff" viewBox="0 0 24 24">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-            </svg>
-            LinkedIn
-          </a>
+          <p>
+            Ready to learn more or discuss partnership opportunities?<br><br>
+            <a href="mailto:hello@rubixvi.com" class="email-link">hello@rubixvi.com</a><br><br>
+            Follow our journey on LinkedIn:
+            <a href="https://www.linkedin.com/company/rubixvi" target="_blank" rel="noopener" class="linkedin-link">LinkedIn</a>
+          </p>
         </div>
       </div>
     </div>
@@ -56,279 +389,223 @@
     <div class="careers-container">
       <div class="careers-header">
         <h2 class="careers-title">Join Our Team</h2>
-        <p class="careers-subtitle">We're a <strong>stealth-mode healthcare innovation company</strong> building the next generation of healthcare applications. In our team, you'll enjoy the <strong>energy of a startup</strong> with <strong>people-centric impact</strong>, tremendous opportunities to work with an <strong>extraordinary team</strong> of smart, creative, fun, and <strong>highly motivated</strong> people, and flexible hours including remote work.</p>
+        <p class="careers-subtitle">
+          We’re a <strong>stealth–mode healthcare innovation company</strong> building the next generation of healthcare applications. In our team, you'll enjoy the <strong>energy of a startup</strong> with <strong>people–centric impact</strong>, tremendous opportunities to work with an <strong>extraordinary team</strong> of smart, creative, fun, and <strong>highly motivated</strong> people, and flexible hours including remote work.
+        </p>
       </div>
       <div id="jobs-container"></div>
     </div>
   </section>
-  <button class="back-to-top" onclick="handleNavigation()">
-    <span class="nav-arrow">↑</span>
-  </button>
+  <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
   <footer class="footer">
     <p>© 2025 Rubixvi Pte Ltd | Singapore | Remote Worldwide | All rights reserved</p>
   </footer>
-  <!-- Inline jobsData for jobs (edit/add jobs here!) -->
   <script>
-window.jobsData = [
-  {
-    "title": "Founding UX Designer",
-    "location": "Rubixvi • Singapore | Remote",
-    "summary": "We are looking for a UX Designer to join the founding product team at Rubixvi to help build a new digital health platform.",
-    "description": [
-      "This is a chance to shape the product from the inside out, not just how it looks but how it works. You will be the first internal designer on the team, with the opportunity to define flows, create systems, and help build something that truly matters.",
-      "We care about design that is practical, clean, and centered around real users. You will work closely with engineers, product leads, and stakeholders to make sure what we build is thoughtful, usable, and scalable.",
-      "You will work directly with experts who bring decades of experience in product delivery and deep expertise in the medical field. This is a chance to learn, grow, and contribute to a transformative product that aims to make a real impact."
-    ],
-    "requirements": [
-      "4 or more years of experience in UX or UI design",
-      "Strong portfolio showing mobile first design work for iOS and Android",
-      "Proficiency in Figma for interface design, prototyping, and design systems",
-      "Solid grasp of interaction patterns, accessibility, and responsive design",
-      "Able to produce and maintain developer ready design documentation",
-      "Familiar with working closely with developers and product leads",
-      "Excellent written and verbal communication in English"
-    ],
-    "whoYouAre": [
-      "You are driven by problems, not just pixels",
-      "You collaborate well across disciplines",
-      "You enjoy working within constraints and iterating with feedback",
-      "You value clarity in your designs, documentation, and communication",
-      "You take ownership but are not precious about your work",
-      "You want to build something that helps people in real life"
-    ],
-    "whatYouWillDo": [
-      "Design and evolve the core experience across mobile and web",
-      "Build and maintain a modular design system in Figma",
-      "Define user flows, structure information, and shape interactions",
-      "Work closely with engineers and product leads to ship features",
-      "Produce high quality documentation and design specifications",
-      "Join product discussions and help shape priorities and decisions"
-    ],
-    "contractSetup": [
-      "Full-time remote position",
-      "Reporting to product leadership, working directly with frontend and backend engineers"
-    ]
-  },
-  {
-    "title": "Lead App Developer",
-    "location": "Rubixvi • Singapore | Remote",
-    "summary": "As Lead App Developer at Rubixvi, you'll drive the technical vision and hands-on development of our new digital health platform.",
-    "description": [
-      "Lead the development of our mobile and web applications, working closely with product, design, and fellow developers to bring Rubixvi’s digital health platform to life. You'll help shape the architecture, set technical direction, and guide a small engineering team in shipping features that make a real difference."
-    ],
-    "requirements": [
-      "6+ years of experience in software development",
-      "Strong knowledge of React and React Native",
-      "Experience with at least one backend language (Node.js or Python preferred)",
-      "Proficiency with TypeScript and API integration",
-      "Track record of building and maintaining production web or mobile apps",
-      "Familiarity with git workflows, CI/CD pipelines, and deployments",
-      "Experience mentoring or leading engineering teammates",
-      "Comfortable collaborating with product and design from concept to delivery",
-      "Strong communication skills in English",
-      "Exposure to startup environments and zero-to-one product launches",
-      "Familiarity with authentication, analytics, and mobile deployments (App Store, Play Store)"
-    ],
-    "whoYouAre": [
-      "You lead by doing and enjoy building things that help people",
-      "You thrive in ambiguous, early-stage environments",
-      "You work well with designers and product leads to create great user experiences",
-      "You communicate clearly and enjoy talking through tradeoffs",
-      "You take ownership of delivery, not just code",
-      "You enjoy working in small, high-trust teams"
-    ],
-    "whatYouWillDo": [
-      "Lead the development of Rubixvi’s mobile and web applications",
-      "Define architecture, tooling, and engineering best practices",
-      "Collaborate with product and design on features, flows, and priorities",
-      "Write, review, and ship clean, scalable code",
-      "Mentor mid-level engineers and build strong team culture",
-      "Set up deployment pipelines for speed and reliability",
-      "Support QA, testing, and technical documentation"
-    ],
-    "contractSetup": [
-      "Full-time position, fully remote",
-      "Report to product leadership and work alongside engineers, QA, and designers"
-    ]
-  },
-  {
-    "title": "Mid-Level Frontend Developer",
-    "location": "Rubixvi • Singapore | Remote",
-    "summary": "As a Mid-Level Frontend Developer at Rubixvi, you’ll help build user-facing features for our new digital health platform.",
-    "description": [
-      "Work with a small, talented team to build and evolve our mobile and web apps. You'll collaborate closely with product, design, and backend teammates, owning features from idea to launch. This is a hands-on role focused on delivering clean code, intuitive UI, and reliable experiences for people who need them."
-    ],
-    "requirements": [
-      "3+ years of experience in modern frontend development",
-      "Solid experience with React and TypeScript",
-      "Experience with React Native or strong willingness to learn",
-      "Ability to build responsive layouts and smooth mobile interactions",
-      "Familiar with git, PRs, CI, and code review workflows",
-      "Comfortable working with design and backend teams",
-      "Attention to code quality, performance, and maintainability",
-      "Good written and spoken English",
-      "Experience with mobile-first products"
-    ],
-    "whoYouAre": [
-      "You care about user experience as much as code",
-      "You like working with designers and getting details right",
-      "You enjoy building UI that feels smooth and well-integrated",
-      "You take ownership and are reliable with delivery",
-      "You work well in teams — you listen, speak up, and collaborate",
-      "You like startups and are comfortable with pace and variety"
-    ],
-    "whatYouWillDo": [
-      "Build and maintain user-facing features for mobile and web",
-      "Translate designs and ideas into working interfaces",
-      "Integrate APIs and collaborate with backend engineers",
-      "Write clean, maintainable, reusable code using React and React Native",
-      "Participate in reviews, planning, and delivery discussions",
-      "Help improve our frontend tooling and performance"
-    ],
-    "contractSetup": [
-      "Full-time remote position",
-      "Work with product leadership, senior engineers, and design team"
-    ]
-  },
-  {
-    "title": "Project Manager – Core Product Team",
-    "location": "Rubixvi • Singapore | Remote",
-    "summary": "As Project Manager at Rubixvi, you’ll help keep our core product team focused, organized, and delivering—without adding unnecessary process.",
-    "description": [
-      "Work side-by-side with product, design, and engineering to track delivery, unblock issues, and make sure everyone has what they need to do their best work. You’re there to reduce noise, keep the team aligned, and help things move smoothly as we build out Rubixvi’s digital health platform."
-    ],
-    "requirements": [
-      "4+ years of experience as a project or delivery manager",
-      "Experience working with product, design, and engineering teams",
-      "Comfortable managing sprints, delivery tracking, and prioritization",
-      "Familiar with Jira, Linear, or other task management tools",
-      "Able to lead stand-ups, retros, and planning sessions without overcomplicating them",
-      "Strong communicator—clear in Slack, Notion, docs, and meetings",
-      "Familiar with agile and lean delivery models",
-      "Strong written and spoken English",
-      "Bonus: Experience in healthtech, SaaS, or service platforms",
-      "Bonus: Worked in remote-first or async-first teams",
-      "Bonus: Experience supporting or defining product roadmaps"
-    ],
-    "whoYouAre": [
-      "You help teams deliver—not just track work",
-      "You’re organized but flexible, adapting to how the team works best",
-      "You bring clarity and reduce ambiguity",
-      "Devs trust you and stakeholders respect your updates",
-      "You keep things moving but don’t need to be the center of attention",
-      "You stay calm under pressure and are helpful when things go wrong"
-    ],
-    "whatYouWillDo": [
-      "Structure and maintain the team’s delivery schedule",
-      "Track feature progress, highlight risks, and follow up on blockers",
-      "Facilitate sprint planning, retrospectives, and alignment meetings",
-      "Coordinate across product, design, and engineering",
-      "Own delivery tracking in Jira, Linear, or similar tools",
-      "Keep documentation of what’s being built, shipped, or delayed up to date",
-      "Help onboard new team members and organize resources"
-    ],
-    "contractSetup": [
-      "Full-time remote position",
-      "Work closely with product leadership, engineering, and design",
-      "Focused on product delivery and team efficiency"
-    ]
-  },
-  {
-    "title": "Operations Manager",
-    "location": "Rubixvi • Singapore | Remote",
-    "summary": "As Operations Manager at Rubixvi, you'll become the operational backbone of our fast-developing healthcare company.",
-    "description": [
-      "Lead operational excellence across all departments while scaling our healthcare innovation platform. You'll streamline processes, manage cross-functional initiatives, and ensure our team operates at peak efficiency as we revolutionize global healthcare delivery."
-    ],
-    "requirements": [
-      "4+ years of operations experience in fast-growing startups",
-      "Experience scaling teams and processes in healthcare or similar regulated industries",
-      "Strong analytical skills and data-driven decision making",
-      "Good at finding new talent and guiding",
-      "Excellent project management and cross-functional collaboration skills"
-    ],
-    "whoYouAre": [
-      "You thrive in ambiguous, fast-paced environments",
-      "You're passionate about building systems that scale",
-      "You believe in the transformative power of healthcare technology",
-      "You're detail-oriented but never lose sight of the big picture"
-    ],
-    "whatYouWillDo": [
-      "Design and implement operational frameworks across all departments",
-      "Lead cross-functional initiatives to drive company-wide efficiency",
-      "Build partnerships and vendor relationships critical to our mission",
-      "Establish metrics and KPIs to measure operational success"
-    ],
-    "contractSetup": [
-      "Full-time position with equity participation",
-      "Hybrid work arrangements available"
-    ]
-  }
-];
-  </script>
-  <script>
-    function toggleJobDetails(jobCard) {
-      const allJobCards = document.querySelectorAll('.job-card');
-      allJobCards.forEach(card => {
-        if (card !== jobCard) card.classList.remove('expanded');
-      });
-      jobCard.classList.toggle('expanded');
-      if (jobCard.classList.contains('expanded')) {
-        setTimeout(() => { checkScrollability(jobCard); }, 500);
+    // Inline jobs data
+    window.jobsData = [
+      {
+        "title": "Founding UX Designer",
+        "location": "Rubixvi • Singapore | Remote",
+        "summary": "We are looking for a UX Designer to join the founding product team at Rubixvi to help build a new digital health platform.",
+        "description": [
+          "This is a chance to shape the product from the inside out, not just how it looks but how it works. You will be the first internal designer on the team, with the opportunity to define flows, create systems, and help build something that truly matters.",
+          "We care about design that is practical, clean, and centered around real users. You will work closely with engineers, product leads, and stakeholders to make sure what we build is thoughtful, usable, and scalable.",
+          "You will work directly with experts who bring decades of experience in product delivery and deep expertise in the medical field. This is a chance to learn, grow, and contribute to a transformative product that aims to make a real impact."
+        ],
+        "requirements": [
+          "4 or more years of experience in UX or UI design",
+          "Strong portfolio showing mobile first design work for iOS and Android",
+          "Proficiency in Figma for interface design, prototyping, and design systems",
+          "Solid grasp of interaction patterns, accessibility, and responsive design",
+          "Able to produce and maintain developer ready design documentation",
+          "Familiar with working closely with developers and product leads",
+          "Excellent written and verbal communication in English"
+        ],
+        "whoYouAre": [
+          "You are driven by problems, not just pixels",
+          "You collaborate well across disciplines",
+          "You enjoy working within constraints and iterating with feedback",
+          "You value clarity in your designs, documentation, and communication",
+          "You take ownership but are not precious about your work",
+          "You want to build something that helps people in real life"
+        ],
+        "whatYouWillDo": [
+          "Design and evolve the core experience across mobile and web",
+          "Build and maintain a modular design system in Figma",
+          "Define user flows, structure information, and shape interactions",
+          "Work closely with engineers and product leads to ship features",
+          "Produce high quality documentation and design specifications",
+          "Join product discussions and help shape priorities and decisions"
+        ],
+        "contractSetup": [
+          "Full-time remote position",
+          "Reporting to product leadership, working directly with frontend and backend engineers"
+        ]
+      },
+      {
+        "title": "Lead App Developer",
+        "location": "Rubixvi • Singapore | Remote",
+        "summary": "As Lead App Developer at Rubixvi, you'll drive the technical vision and hands-on development of our new digital health platform.",
+        "description": [
+          "Lead the development of our mobile and web applications, working closely with product, design, and fellow developers to bring Rubixvi’s digital health platform to life. You'll help shape the architecture, set technical direction, and guide a small engineering team in shipping features that make a real difference."
+        ],
+        "requirements": [
+          "6+ years of experience in software development",
+          "Strong knowledge of React and React Native",
+          "Experience with at least one backend language (Node.js or Python preferred)",
+          "Proficiency with TypeScript and API integration",
+          "Track record of building and maintaining production web or mobile apps",
+          "Familiarity with git workflows, CI/CD pipelines, and deployments",
+          "Experience mentoring or leading engineering teammates",
+          "Comfortable collaborating with product and design from concept to delivery",
+          "Strong communication skills in English",
+          "Exposure to startup environments and zero-to-one product launches",
+          "Familiarity with authentication, analytics, and mobile deployments (App Store, Play Store)"
+        ],
+        "whoYouAre": [
+          "You lead by doing and enjoy building things that help people",
+          "You thrive in ambiguous, early-stage environments",
+          "You work well with designers and product leads to create great user experiences",
+          "You communicate clearly and enjoy talking through tradeoffs",
+          "You take ownership of delivery, not just code",
+          "You enjoy working in small, high-trust teams"
+        ],
+        "whatYouWillDo": [
+          "Lead the development of Rubixvi’s mobile and web applications",
+          "Define architecture, tooling, and engineering best practices",
+          "Collaborate with product and design on features, flows, and priorities",
+          "Write, review, and ship clean, scalable code",
+          "Mentor mid-level engineers and build strong team culture",
+          "Set up deployment pipelines for speed and reliability",
+          "Support QA, testing, and technical documentation"
+        ],
+        "contractSetup": [
+          "Full-time position, fully remote",
+          "Report to product leadership and work alongside engineers, QA, and designers"
+        ]
+      },
+      {
+        "title": "Mid-Level Frontend Developer",
+        "location": "Rubixvi • Singapore | Remote",
+        "summary": "As a Mid-Level Frontend Developer at Rubixvi, you’ll help build user-facing features for of our new digital health platform.",
+        "description": [
+          "Work with a small, talented team to build and evolve our mobile and web apps. You'll collaborate closely with product, design, and backend teammates, owning features from idea to launch. This is a hands-on role focused on delivering clean code, intuitive UI, and reliable experiences for people who need them."
+        ],
+        "requirements": [
+          "3+ years of experience in modern frontend development",
+          "Solid experience with React and TypeScript",
+          "Experience with React Native or strong willingness to learn",
+          "Ability to build responsive layouts and smooth mobile interactions",
+          "Familiar with git, PRs, CI, and code review workflows",
+          "Comfortable working with design and backend teams",
+          "Attention to code quality, performance, and maintainability",
+          "Good written and spoken English",
+          "Experience with mobile-first products"
+        ],
+        "whoYouAre": [
+          "You care about user experience as much as code",
+          "You like working with designers and getting details right",
+          "You enjoy building UI that feels smooth and well-integrated",
+          "You take ownership and are reliable with delivery",
+          "You work well in teams — you listen, speak up, and collaborate",
+          "You like startups and are comfortable with pace and variety"
+        ],
+        "whatYouWillDo": [
+          "Build and maintain user-facing features for mobile and web",
+          "Translate designs and ideas into working interfaces",
+          "Integrate APIs and collaborate with backend engineers",
+          "Write clean, maintainable, reusable code using React and React Native",
+          "Participate in reviews, planning, and delivery discussions",
+          "Help improve our frontend tooling and performance"
+        ],
+        "contractSetup": [
+          "Full-time remote position",
+          "Work with product leadership, senior engineers, and design team"
+        ]
+      },
+      {
+        "title": "Project Manager – Core Product Team",
+        "location": "Rubixvi • Singapore | Remote",
+        "summary": "As Project Manager at Rubixvi, you’ll help keep our core product team focused, organized, and delivering—without adding unnecessary process.",
+        "description": [
+          "Work side-by-side with product, design, and engineering to track delivery, unblock issues, and make sure everyone has what they need to do their best work. You’re there to reduce noise, keep the team aligned, and help things move smoothly as we build out Rubixvi’s digital health platform."
+        ],
+        "requirements": [
+          "4+ years of experience as a project or delivery manager",
+          "Experience working with product, design, and engineering teams",
+          "Comfortable managing sprints, delivery tracking, and prioritization",
+          "Familiar with Jira, Linear, or other task management tools",
+          "Able to lead stand-ups, retros, and planning sessions without overcomplicating them",
+          "Strong communicator—clear in Slack, Notion, docs, and meetings",
+          "Familiar with agile and lean delivery models",
+          "Strong written and spoken English",
+          "Bonus: Experience in healthtech, SaaS, or service platforms",
+          "Bonus: Worked in remote-first or async-first teams",
+          "Bonus: Experience supporting or defining product roadmaps"
+        ],
+        "whoYouAre": [
+          "You help teams deliver—not just track work",
+          "You’re organized but flexible, adapting to how the team works best",
+          "You bring clarity and reduce ambiguity",
+          "Devs trust you and stakeholders respect your updates",
+          "You keep things moving but don’t need to be the center of attention",
+          "You stay calm under pressure and are helpful when things go wrong"
+        ],
+        "whatYouWillDo": [
+          "Structure and maintain the team’s delivery schedule",
+          "Track feature progress, highlight risks, and follow up on blockers",
+          "Facilitate sprint planning, retrospectives, and alignment meetings",
+          "Coordinate across product, design, and engineering",
+          "Own delivery tracking in Jira, Linear, or similar tools",
+          "Keep documentation of what’s being built, shipped, or delayed up to date",
+          "Help onboard new team members and organize resources"
+        ],
+        "contractSetup": [
+          "Full-time remote position",
+          "Work closely with product leadership, engineering, and design",
+          "Focused on product delivery and team efficiency"
+        ]
+      },
+      {
+        "title": "Operations Manager",
+        "location": "Rubixvi • Singapore | Remote",
+        "summary": "As Operations Manager at Rubixvi, you'll become the operational backbone of our fast-developing healthcare company.",
+        "description": [
+          "Lead operational excellence across all departments while scaling our healthcare innovation platform. You'll streamline processes, manage cross-functional initiatives, and ensure our team operates at peak efficiency as we revolutionize global healthcare delivery."
+        ],
+        "requirements": [
+          "4+ years of operations experience in fast-growing startups",
+          "Experience scaling teams and processes in healthcare or similar regulated industries",
+          "Strong analytical skills and data-driven decision making",
+          "Good at finding new talent and guiding",
+          "Excellent project management and cross-functional collaboration skills"
+        ],
+        "whoYouAre": [
+          "You thrive in ambiguous, fast-paced environments",
+          "You're passionate about building systems that scale",
+          "You believe in the transformative power of healthcare technology",
+          "You're detail-oriented but never lose sight of the big picture"
+        ],
+        "whatYouWillDo": [
+          "Design and implement operational frameworks across all departments",
+          "Lead cross-functional initiatives to drive company-wide efficiency",
+          "Build partnerships and vendor relationships critical to our mission",
+          "Establish metrics and KPIs to measure operational success"
+        ],
+        "contractSetup": [
+          "Full-time position with equity participation",
+          "Hybrid work arrangements available"
+        ]
       }
-    }
-    function checkScrollability(jobCard) {
-      const jobDetails = jobCard.querySelector('.job-details');
-      if (jobDetails.scrollHeight > jobDetails.clientHeight) {
-        jobDetails.classList.add('has-scroll');
-        jobDetails.addEventListener('scroll', function() {
-          const scrollPercentage = (this.scrollTop + this.clientHeight) / this.scrollHeight;
-          if (scrollPercentage > 0.9) this.classList.remove('has-scroll');
-        });
-      } else {
-        jobDetails.classList.remove('has-scroll');
-      }
-    }
-    function handleScrollAnimations() {
-      const footer = document.querySelector('.footer');
-      const backToTop = document.querySelector('.back-to-top');
-      const navArrow = document.querySelector('.nav-arrow');
-      const careersSection = document.getElementById('careers');
-      const careersRect = careersSection.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const scrollY = window.scrollY;
-      if (careersRect.top <= windowHeight * 0.3) footer.classList.add('visible');
-      else footer.classList.remove('visible');
-      if (scrollY > windowHeight * 0.5) {
-        backToTop.classList.add('visible');
-        if (careersRect.top > windowHeight * 0.8) navArrow.textContent = '↓';
-        else navArrow.textContent = '↑';
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    }
-    window.addEventListener('scroll', handleScrollAnimations);
-    handleScrollAnimations();
+    ];
 
-    function loadJobs() {
-      try {
-        const jobs = window.jobsData;
-        if (!jobs || !Array.isArray(jobs) || jobs.length === 0) {
-          showJobsFallback();
-          return;
-        }
-        renderJobs(jobs);
-      } catch (error) {
-        showJobsFallback();
-      }
-    }
+    // Job card rendering and logic
     function renderJobs(jobs) {
       const container = document.getElementById('jobs-container');
-      container.innerHTML = ''; // Clear first!
-      jobs.forEach((job, index) => {
+      container.innerHTML = '';
+      jobs.forEach(job => {
         const jobCard = document.createElement('div');
         jobCard.className = 'job-card';
-        jobCard.onclick = () => toggleJobDetails(jobCard);
         jobCard.innerHTML = `
           <div class="job-header">
             <div class="job-info">
@@ -340,148 +617,47 @@ window.jobsData = [
           </div>
           <div class="job-details">
             <div class="job-description">
-              ${(job.description || []).map(p => `<p>${p}</p>`).join('')}
+              ${job.description.map(p => `<p>${p}</p>`).join('')}
               <h4>Requirements</h4>
-              <ul>${(job.requirements || []).map(req => `<li>${req}</li>`).join('')}</ul>
+              <ul>${job.requirements.map(req => `<li>${req}</li>`).join('')}</ul>
               <h4>Who You Are</h4>
-              <ul>${(job.whoYouAre || []).map(trait => `<li>${trait}</li>`).join('')}</ul>
+              <ul>${job.whoYouAre.map(trait => `<li>${trait}</li>`).join('')}</ul>
               <h4>What You Will Do</h4>
-              <ul>${(job.whatYouWillDo || []).map(task => `<li>${task}</li>`).join('')}</ul>
+              <ul>${job.whatYouWillDo.map(task => `<li>${task}</li>`).join('')}</ul>
               <h4>Contract & Setup</h4>
-              <ul>${(job.contractSetup || []).map(item => `<li>${item}</li>`).join('')}</ul>
+              <ul>${job.contractSetup.map(item => `<li>${item}</li>`).join('')}</ul>
               <div class="job-cta">
-                <div class="job-separator"></div>
-                <p class="cta-text">Interested in this role? We'd love to hear from you!</p>
-                <button class="cta-button" onclick="event.stopPropagation(); showConfirmation(this, '${encodeURIComponent(job.title)}')">Apply for this position →</button>
-                <div class="email-notice" style="display: none;">
-                  <p>📧 This will open your email client and direct you to: <strong>hello@rubixvi.com</strong></p>
-                </div>
+                <button class="cta-button" onclick="event.stopPropagation();window.location='mailto:hello@rubixvi.com?subject=Application for ${encodeURIComponent(job.title)}';">Apply for this position →</button>
               </div>
             </div>
           </div>
         `;
+        // Click to expand/collapse
+        jobCard.querySelector('.job-header').onclick = function(e) {
+          if (jobCard.classList.contains('expanded')) {
+            jobCard.classList.remove('expanded');
+          } else {
+            document.querySelectorAll('.job-card.expanded').forEach(c => c.classList.remove('expanded'));
+            jobCard.classList.add('expanded');
+            setTimeout(() => {
+              jobCard.scrollIntoView({behavior: 'smooth', block: 'center'});
+            }, 80);
+          }
+        };
         container.appendChild(jobCard);
       });
-      // Animate cards in
-      setTimeout(() => {
-        document.querySelectorAll('.job-card').forEach((el, i) => {
-          setTimeout(() => {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-          }, 70*i);
-        });
-      }, 200);
     }
-    function showJobsFallback() {
-      const container = document.getElementById('jobs-container');
-      container.innerHTML = `
-        <div style="background: #fff;border: 1px solid #e0e0e0;border-radius: 12px;padding: 2rem;text-align: center;margin: 2rem 0;box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
-          <h3 style="color: #ff6b6b;margin-bottom: 1rem;font-size: 1.2rem;">⚠️ Unable to Load Job Listings</h3>
-          <p style="color: #666;margin: 0;line-height: 1.5;">We're having trouble loading our current job openings. Please try again later or contact us directly.</p>
-        </div>
-      `;
-    }
-    function showConfirmation(button, jobTitle) {
-      const notice = button.parentElement.querySelector('.email-notice');
-      const originalText = button.innerHTML;
-      button.innerHTML = 'Open Email Client';
-      button.classList.add('confirmation-state');
-      notice.style.display = 'block';
-      const confirmHandler = function(e) {
-        e.stopPropagation();
-        window.location.href = `mailto:hello@rubixvi.com?subject=Application for ${decodeURIComponent(jobTitle)} Position`;
-        resetButton();
-      };
-      button.onclick = confirmHandler;
-      function resetButton() {
-        button.innerHTML = originalText;
-        button.classList.remove('confirmation-state');
-        notice.style.display = 'none';
-        button.onclick = (e) => {
-          e.stopPropagation();
-          showConfirmation(button, jobTitle);
-        };
-      }
-      setTimeout(resetButton, 5000);
-    }
-    function handleNavigation() {
-      const sections = [
-        document.querySelector('.hero-section'),
-        document.getElementById('about'),
-        document.getElementById('careers')
-      ];
-      const careersSection = document.getElementById('careers');
-      const careersRect = careersSection.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      if (careersRect.top > windowHeight * 0.8) {
-        careersSection.scrollIntoView({behavior: 'smooth'});
+    renderJobs(window.jobsData);
+
+    // Show/hide back-to-top button on scroll
+    const backToTopBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight * 0.5) {
+        backToTopBtn.classList.add('visible');
       } else {
-        const currentScrollY = window.scrollY;
-        let targetSection = sections[0];
-        if (currentScrollY >= sections[2].offsetTop - windowHeight * 0.3) {
-          targetSection = sections[1];
-        } else if (currentScrollY >= sections[1].offsetTop - windowHeight * 0.3) {
-          targetSection = sections[0];
-        }
-        targetSection.scrollIntoView({behavior: 'smooth'});
+        backToTopBtn.classList.remove('visible');
       }
-    }
-    // Anime.js animations
-    anime.timeline()
-      .add({ targets: 'img', translateY: [-30, 0], opacity: [0, 1], duration: 800, easing: 'easeOutExpo' })
-      .add({ targets: 'h1', translateY: [-20, 0], opacity: [0, 1], duration: 600, easing: 'easeOutExpo' }, '-=400')
-      .add({ targets: '.main-slogan', translateY: [-20, 0], opacity: [0, 1], duration: 600, easing: 'easeOutExpo' }, '-=300')
-      .add({ targets: '.slogan', translateY: [-20, 0], opacity: [0, 1], duration: 600, easing: 'easeOutExpo' }, '-=200')
-      .add({ targets: '.get-started-btn', translateY: [-20, 0], opacity: [0, 1], duration: 600, easing: 'easeOutExpo' }, '-=100');
-    // Cards animation on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (entry.target.classList.contains('card')) {
-            anime({
-              targets: entry.target,
-              translateY: [50, 0],
-              opacity: [0, 1],
-              duration: 800,
-              easing: 'easeOutExpo',
-              delay: anime.stagger(100)
-            });
-          } else if (entry.target.classList.contains('job-card')) {
-            anime({
-              targets: entry.target,
-              translateY: [30, 0],
-              opacity: [0, 1],
-              duration: 600,
-              easing: 'easeOutExpo'
-            });
-          } else if (entry.target.classList.contains('careers-title')) {
-            anime({
-              targets: '.careers-title',
-              translateY: [-30, 0],
-              opacity: [0, 1],
-              duration: 800,
-              easing: 'easeOutExpo'
-            });
-          } else if (entry.target.classList.contains('careers-subtitle')) {
-            anime({
-              targets: '.careers-subtitle',
-              translateY: [-20, 0],
-              opacity: [0, 1],
-              duration: 600,
-              easing: 'easeOutExpo',
-              delay: 200
-            });
-          }
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.card, .job-card, .careers-title, .careers-subtitle').forEach(el => {
-      el.style.opacity = '0';
-      observer.observe(el);
     });
-    // Init jobs
-    loadJobs();
   </script>
 </body>
 </html>
