@@ -49,7 +49,7 @@
             Ready to learn more or discuss partnership opportunities?
           </p>
           <a href="mailto:hello@rubixvi.com" class="card-link email-link">hello@rubixvi.com</a>
-          <p class="contact-follow">Follow our journey on LinkedIn:</p>
+          <p style="margin: 1rem 0 0.5rem;">Follow our journey on LinkedIn:</p>
           <a href="https://www.linkedin.com/company/rubixvi/posts/" target="_blank" rel="noopener" class="card-link linkedin-link">LinkedIn</a>
         </div>
       </div>
@@ -66,16 +66,30 @@
         </p>
       </div>
       <!-- JOBS LISTINGS (JS can inject here) -->
-      <div id="jobs-container" class="jobs-fallback-message">
-        If you don't see a job that matches your skills, but you’re interested in joining our team, we’re always open to amazing individuals.<br>
-        Reach out directly at <a href="mailto:hello@rubixvi.com">hello@rubixvi.com</a>!
+      <div id="jobs-container">
+        <div style="background:#fff; max-width:440px; margin:2rem auto 0 auto; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.08); padding:2.2rem 2rem 2rem 2rem; text-align:center;">
+          <span style="font-size:1.5rem; color:#1e90ff;">&#128640;</span>
+          <div style="color:#222; font-size:1.1rem; margin-top:1rem;">
+            If you don’t see a job that matches your skills, but you’re interested in joining our team,<br>
+            we’re always open to amazing individuals.<br>
+            <strong>Reach out directly at <a href="mailto:hello@rubixvi.com">hello@rubixvi.com</a></strong>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- BLUE FOOTER BAR -->
+  <footer class="footer visible">
+    <p>
+      © 2025 Rubixvi Pte Ltd | Singapore | Remote Worldwide | All rights reserved
+    </p>
+  </footer>
+
   <!-- Back to Top Button -->
   <button class="back-to-top" id="backToTopBtn" aria-label="Back to top" type="button">↑</button>
   <script>
+    // Show/hide back-to-top button
     window.onscroll = function() {
       document.getElementById("backToTopBtn").classList.toggle("visible", window.scrollY > 180);
     };
