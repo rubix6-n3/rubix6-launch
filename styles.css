@@ -32,6 +32,8 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
+  min-height: 100vh;
+  padding-bottom: 80px; /* space for footer */
 }
 
 .hero-section {
@@ -134,7 +136,6 @@ h1, .hero-title {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* aspect-ratio REMOVED */
 }
 
 .about-card { grid-area: about; }
@@ -186,7 +187,6 @@ h1, .hero-title {
   color: var(--color-primary);
 }
 
-/* Contact card can be slightly more subtle */
 .contact-card {
   background: #f6f7f8;
   color: #222;
@@ -203,6 +203,40 @@ h1, .hero-title {
 
 .contact-card .linkedin-link {
   margin-left: 0.5rem;
+}
+
+/* Careers/Join Our Team section below (optional styles for header) */
+.careers-section {
+  background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 25%, #e0e0e0 50%, #e8e8e8 75%, #f0f0f0 100%);
+  padding: 4rem 0 8rem 0;
+  min-height: 60vh;
+}
+.careers-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.careers-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.careers-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #1e90ff, #00c8c8, #fbbc05, #ff5722);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.careers-subtitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: #555555;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
 }
 
 /* Responsive for mobile */
@@ -225,4 +259,55 @@ h1, .hero-title {
   .card {
     padding: 1.3rem 1.1rem 1rem 1.1rem;
   }
+}
+
+/* Footer */
+.footer {
+  width: 100vw;
+  background: linear-gradient(90deg, #1e90ff, #00c8c8 50%, #1e90ff 100%);
+  padding: 1rem 0 0.9rem 0;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 200;
+  box-shadow: 0 -4px 16px rgba(30, 144, 255, 0.14);
+}
+.footer p {
+  margin: 0;
+  letter-spacing: 0.03em;
+  font-size: 1rem;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 64px;
+  right: 2rem;
+  background: linear-gradient(135deg, #1e90ff, #00c8c8);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+  opacity: 0;
+  transform: translateY(24px);
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.22s, transform 0.18s;
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  background: linear-gradient(135deg, #1e90ff 80%, #00c8c8 100%);
+  transform: translateY(-3px) scale(1.08);
 }
